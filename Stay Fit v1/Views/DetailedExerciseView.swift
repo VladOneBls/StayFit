@@ -17,14 +17,26 @@ struct DetailedExerciseView: View {
     let videoName: String
     
     var body: some View {
+        
+        let player = AVPlayer(url: URL(fileURLWithPath: Bundle.main.path(forResource: videoName, ofType: "mov")!))
+        
         ZStack {
             Image("background").edgesIgnoringSafeArea(.all)
             
             VStack {
                 VStack {
-                    VideoPlayer(player: AVPlayer(url: URL(fileURLWithPath: Bundle.main.path(forResource: videoName, ofType: "mov")!)))
+                    VideoPlayer(player: player)
                         .frame(width: 390, height: 219)
                         .cornerRadius(10)
+//                        .onAppear(){
+//                            player.play()
+//                        }
+                        .onDisappear(){
+                            player.pause()
+                            player.seek(to: .zero)
+                            
+                        }
+                        //.disabled(true) // displays the video controls for 3 secs and then dissapear
                 }
                 
                 Text(exerciseName)
