@@ -20,7 +20,7 @@ class ExerciseViewModel: ObservableObject {
             ExerciseModel(name: "LUNGES",
                           logo: "logoLunges",
                           picture: "lunges",
-                          videoURL:"https://cvws.icloud-content.com/B/AYlYbdmbj9XvAyE2r5Xp-trpJhFFAYE7wNAeBRAgOIVMz1dCgwKKAb1R/lunges.mp4?o=ArmWupid6ewgPXGwPifEIoEuKjOs9cYotgE4wrQNH0XO&v=1&x=3&a=CAog5jm7HOqvpqQyXdaYG-GBuvYKQ5UtBc70csimtiCkyGsSbRCxxuulrS8Y0b2ipq0vIgEAUgTpJhFFWgSKAb1Raibu7wBxNRxHjU0Fo9UeThcOrMR1jQigA6L2vu6Ywza2osLuc7fa8nImFQIVo7DSmd3DIBpZ72eMKx8g4TtSkdkPPjEs10itQ0MRT4uk7XU&e=1627067555&fl=&r=c3043f60-d0d0-4605-8031-ad261279c2e7-1&k=Am51WZJUOJ44ormF54W6_g&ckc=com.apple.clouddocs&ckz=com.apple.CloudDocs&p=29&s=Srw_IVaw49ystiHea7EQgYTviKk&cd=i",
+                          videoURL:"",
                           steps: ["Stand with your feet shoulder width apart and your hands on your hips",
                                   "Step forward with your right leg and lower your body until your thigh is parallel to the floor",
                                   "Return and switch to the other leg",
