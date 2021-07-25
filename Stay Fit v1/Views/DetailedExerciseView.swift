@@ -14,7 +14,6 @@ struct DetailedExerciseView: View {
     
     let exerciseName: String
     let steps: [String]
-    let url: String
     
     var body: some View {
         ZStack {
@@ -22,7 +21,7 @@ struct DetailedExerciseView: View {
             
             VStack {
                 VStack {
-                    VideoPlayer(player: AVPlayer(url: URL(string: url)!))
+                    VideoPlayer(player: AVPlayer(url: URL(fileURLWithPath: Bundle.main.path(forResource: "squats", ofType: "mov")!)))
                         .frame(width: 390, height: 219)
                         .cornerRadius(10)
                 }
@@ -70,7 +69,7 @@ struct DetailedExerciseView: View {
 
 struct DetailedExerciseView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailedExerciseView(exerciseName: "Exercise Name", steps: ["1", "2", "3", "4", "5"], url: "https://drive.google.com/file/d/1VIMS6dRJbSo0EpDp-3KvIU4BrJCoBcnj/view?usp=sharing")
+        DetailedExerciseView(exerciseName: "Exercise Name", steps: ["1", "2", "3", "4", "5"])
             .environmentObject(ExerciseViewModel())
     }
 }

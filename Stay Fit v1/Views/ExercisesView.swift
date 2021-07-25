@@ -15,12 +15,12 @@ struct ExercisesView: View {
         ZStack {
             Image("background")
                 .edgesIgnoringSafeArea(.all)
-                .navigationTitle("Exercises")
+                //.navigationTitle("Exercises")
             
             ScrollView {
                 ForEach(exerciseViewModel.exercises) { ex in
                     NavigationLink(
-                        destination: DetailedExerciseView(exerciseName: ex.name, steps: ex.steps, url: ex.videoURL),
+                        destination: DetailedExerciseView(exerciseName: ex.name, steps: ex.steps),
                         label: {
                         Text(ex.name)
                             .font(.title2)
