@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		0E2EB3A226ADC54700B39127 /* squats.mov in Resources */ = {isa = PBXBuildFile; fileRef = 0E2EB3A126ADC54700B39127 /* squats.mov */; };
+		0E2EB3A726ADC94E00B39127 /* alternatingHooks.mov in Resources */ = {isa = PBXBuildFile; fileRef = 0E2EB3A326ADC94E00B39127 /* alternatingHooks.mov */; };
+		0E2EB3A826ADC94E00B39127 /* abdominalCrunches.mov in Resources */ = {isa = PBXBuildFile; fileRef = 0E2EB3A426ADC94E00B39127 /* abdominalCrunches.mov */; };
+		0E2EB3A926ADC94E00B39127 /* armCurlsCrunches.mov in Resources */ = {isa = PBXBuildFile; fileRef = 0E2EB3A526ADC94E00B39127 /* armCurlsCrunches.mov */; };
+		0E2EB3AA26ADC94E00B39127 /* armCircles.mov in Resources */ = {isa = PBXBuildFile; fileRef = 0E2EB3A626ADC94E00B39127 /* armCircles.mov */; };
 		0E312B0626A6F69F00E38A06 /* DetailedWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E312B0526A6F69F00E38A06 /* DetailedWorkoutView.swift */; };
 		0E312B0826A6F70B00E38A06 /* WorkingOutSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E312B0726A6F70B00E38A06 /* WorkingOutSessionView.swift */; };
 		0E312B0A26A6F79500E38A06 /* ExercisesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E312B0926A6F79500E38A06 /* ExercisesView.swift */; };
@@ -32,6 +36,10 @@
 
 /* Begin PBXFileReference section */
 		0E2EB3A126ADC54700B39127 /* squats.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = squats.mov; sourceTree = "<group>"; };
+		0E2EB3A326ADC94E00B39127 /* alternatingHooks.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = alternatingHooks.mov; sourceTree = "<group>"; };
+		0E2EB3A426ADC94E00B39127 /* abdominalCrunches.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = abdominalCrunches.mov; sourceTree = "<group>"; };
+		0E2EB3A526ADC94E00B39127 /* armCurlsCrunches.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = armCurlsCrunches.mov; sourceTree = "<group>"; };
+		0E2EB3A626ADC94E00B39127 /* armCircles.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = armCircles.mov; sourceTree = "<group>"; };
 		0E312B0526A6F69F00E38A06 /* DetailedWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedWorkoutView.swift; sourceTree = "<group>"; };
 		0E312B0726A6F70B00E38A06 /* WorkingOutSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkingOutSessionView.swift; sourceTree = "<group>"; };
 		0E312B0926A6F79500E38A06 /* ExercisesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesView.swift; sourceTree = "<group>"; };
@@ -73,6 +81,10 @@
 		0E2EB3A026ADC53C00B39127 /* Files */ = {
 			isa = PBXGroup;
 			children = (
+				0E2EB3A426ADC94E00B39127 /* abdominalCrunches.mov */,
+				0E2EB3A326ADC94E00B39127 /* alternatingHooks.mov */,
+				0E2EB3A626ADC94E00B39127 /* armCircles.mov */,
+				0E2EB3A526ADC94E00B39127 /* armCurlsCrunches.mov */,
 				0E2EB3A126ADC54700B39127 /* squats.mov */,
 			);
 			path = Files;
@@ -232,11 +244,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E2EB3A926ADC94E00B39127 /* armCurlsCrunches.mov in Resources */,
 				0E3568AE2614EADE00BEB5A5 /* LaunchScreen.storyboard in Resources */,
 				0E3C85A626A1C71100C75A45 /* GoogleService-Info.plist in Resources */,
 				0E2EB3A226ADC54700B39127 /* squats.mov in Resources */,
+				0E2EB3A826ADC94E00B39127 /* abdominalCrunches.mov in Resources */,
+				0E2EB3A726ADC94E00B39127 /* alternatingHooks.mov in Resources */,
 				0E3568AB2614EADE00BEB5A5 /* Preview Assets.xcassets in Resources */,
 				0E3568A82614EADE00BEB5A5 /* Assets.xcassets in Resources */,
+				0E2EB3AA26ADC94E00B39127 /* armCircles.mov in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
