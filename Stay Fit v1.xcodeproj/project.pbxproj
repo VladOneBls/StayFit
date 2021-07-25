@@ -42,6 +42,11 @@
 		0E2EB3E426ADCB8A00B39127 /* sideLyingLegRaises.mov in Resources */ = {isa = PBXBuildFile; fileRef = 0E2EB3DF26ADCB8A00B39127 /* sideLyingLegRaises.mov */; };
 		0E2EB3E526ADCB8A00B39127 /* sitUps.mov in Resources */ = {isa = PBXBuildFile; fileRef = 0E2EB3E026ADCB8A00B39127 /* sitUps.mov */; };
 		0E2EB3E626ADCB8A00B39127 /* sideCrunches.mov in Resources */ = {isa = PBXBuildFile; fileRef = 0E2EB3E126ADCB8A00B39127 /* sideCrunches.mov */; };
+		0E2EB3E826ADCBBB00B39127 /* skippingWithoutRope.mov in Resources */ = {isa = PBXBuildFile; fileRef = 0E2EB3E726ADCBBB00B39127 /* skippingWithoutRope.mov */; };
+		0E2EB3ED26ADCBC500B39127 /* starJumps.mov in Resources */ = {isa = PBXBuildFile; fileRef = 0E2EB3E926ADCBC400B39127 /* starJumps.mov */; };
+		0E2EB3EE26ADCBC500B39127 /* sumoSquatCalfRaisesWithWall.mov in Resources */ = {isa = PBXBuildFile; fileRef = 0E2EB3EA26ADCBC400B39127 /* sumoSquatCalfRaisesWithWall.mov */; };
+		0E2EB3EF26ADCBC500B39127 /* starCrawls.mov in Resources */ = {isa = PBXBuildFile; fileRef = 0E2EB3EB26ADCBC400B39127 /* starCrawls.mov */; };
+		0E2EB3F026ADCBC500B39127 /* tricepsDips.mov in Resources */ = {isa = PBXBuildFile; fileRef = 0E2EB3EC26ADCBC500B39127 /* tricepsDips.mov */; };
 		0E312B0626A6F69F00E38A06 /* DetailedWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E312B0526A6F69F00E38A06 /* DetailedWorkoutView.swift */; };
 		0E312B0826A6F70B00E38A06 /* WorkingOutSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E312B0726A6F70B00E38A06 /* WorkingOutSessionView.swift */; };
 		0E312B0A26A6F79500E38A06 /* ExercisesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E312B0926A6F79500E38A06 /* ExercisesView.swift */; };
@@ -100,6 +105,11 @@
 		0E2EB3DF26ADCB8A00B39127 /* sideLyingLegRaises.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = sideLyingLegRaises.mov; sourceTree = "<group>"; };
 		0E2EB3E026ADCB8A00B39127 /* sitUps.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = sitUps.mov; sourceTree = "<group>"; };
 		0E2EB3E126ADCB8A00B39127 /* sideCrunches.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = sideCrunches.mov; sourceTree = "<group>"; };
+		0E2EB3E726ADCBBB00B39127 /* skippingWithoutRope.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = skippingWithoutRope.mov; sourceTree = "<group>"; };
+		0E2EB3E926ADCBC400B39127 /* starJumps.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = starJumps.mov; sourceTree = "<group>"; };
+		0E2EB3EA26ADCBC400B39127 /* sumoSquatCalfRaisesWithWall.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = sumoSquatCalfRaisesWithWall.mov; sourceTree = "<group>"; };
+		0E2EB3EB26ADCBC400B39127 /* starCrawls.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = starCrawls.mov; sourceTree = "<group>"; };
+		0E2EB3EC26ADCBC500B39127 /* tricepsDips.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = tricepsDips.mov; sourceTree = "<group>"; };
 		0E312B0526A6F69F00E38A06 /* DetailedWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedWorkoutView.swift; sourceTree = "<group>"; };
 		0E312B0726A6F70B00E38A06 /* WorkingOutSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkingOutSessionView.swift; sourceTree = "<group>"; };
 		0E312B0926A6F79500E38A06 /* ExercisesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesView.swift; sourceTree = "<group>"; };
@@ -175,7 +185,12 @@
 				0E2EB3DF26ADCB8A00B39127 /* sideLyingLegRaises.mov */,
 				0E2EB3E026ADCB8A00B39127 /* sitUps.mov */,
 				0E2EB3DE26ADCB8900B39127 /* skaterJumps.mov */,
+				0E2EB3E726ADCBBB00B39127 /* skippingWithoutRope.mov */,
 				0E2EB3A126ADC54700B39127 /* squats.mov */,
+				0E2EB3EB26ADCBC400B39127 /* starCrawls.mov */,
+				0E2EB3E926ADCBC400B39127 /* starJumps.mov */,
+				0E2EB3EA26ADCBC400B39127 /* sumoSquatCalfRaisesWithWall.mov */,
+				0E2EB3EC26ADCBC500B39127 /* tricepsDips.mov */,
 			);
 			path = Files;
 			sourceTree = "<group>";
@@ -334,6 +349,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E2EB3EE26ADCBC500B39127 /* sumoSquatCalfRaisesWithWall.mov in Resources */,
 				0E2EB3DB26ADCB5A00B39127 /* quickFeet.mov in Resources */,
 				0E2EB3CE26ADCB0700B39127 /* plank.mov in Resources */,
 				0E2EB3DA26ADCB5A00B39127 /* punches.mov in Resources */,
@@ -341,6 +357,7 @@
 				0E3568AE2614EADE00BEB5A5 /* LaunchScreen.storyboard in Resources */,
 				0E2EB3B326ADC9C900B39127 /* buttBridge.mov in Resources */,
 				0E3C85A626A1C71100C75A45 /* GoogleService-Info.plist in Resources */,
+				0E2EB3ED26ADCBC500B39127 /* starJumps.mov in Resources */,
 				0E2EB3DC26ADCB5A00B39127 /* pushUps.mov in Resources */,
 				0E2EB3BD26ADCA4A00B39127 /* heelTouches.mov in Resources */,
 				0E2EB3D126ADCB0700B39127 /* militaryPushUps.mov in Resources */,
@@ -348,6 +365,7 @@
 				0E2EB3BB26ADCA4A00B39127 /* froggyGluteLifts.mov in Resources */,
 				0E2EB3A226ADC54700B39127 /* squats.mov in Resources */,
 				0E2EB3C526ADCA8200B39127 /* legRaises.mov in Resources */,
+				0E2EB3E826ADCBBB00B39127 /* skippingWithoutRope.mov in Resources */,
 				0E2EB3E426ADCB8A00B39127 /* sideLyingLegRaises.mov in Resources */,
 				0E2EB3D926ADCB5A00B39127 /* proneFlutterKicks.mov in Resources */,
 				0E2EB3B226ADC9C900B39127 /* armScissors.mov in Resources */,
@@ -364,6 +382,7 @@
 				0E2EB3A726ADC94E00B39127 /* alternatingHooks.mov in Resources */,
 				0E3568AB2614EADE00BEB5A5 /* Preview Assets.xcassets in Resources */,
 				0E3568A82614EADE00BEB5A5 /* Assets.xcassets in Resources */,
+				0E2EB3F026ADCBC500B39127 /* tricepsDips.mov in Resources */,
 				0E2EB3E326ADCB8A00B39127 /* skaterJumps.mov in Resources */,
 				0E2EB3B426ADC9C900B39127 /* bycicleCrunches.mov in Resources */,
 				0E2EB3C826ADCA8200B39127 /* legDumbbellCurls.mov in Resources */,
@@ -372,6 +391,7 @@
 				0E2EB3AA26ADC94E00B39127 /* armCircles.mov in Resources */,
 				0E2EB3D026ADCB0700B39127 /* lunges.mov in Resources */,
 				0E2EB3E626ADCB8A00B39127 /* sideCrunches.mov in Resources */,
+				0E2EB3EF26ADCBC500B39127 /* starCrawls.mov in Resources */,
 				0E2EB3CF26ADCB0700B39127 /* mountainClimberSquatThrusts.mov in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
