@@ -37,6 +37,11 @@
 		0E2EB3DA26ADCB5A00B39127 /* punches.mov in Resources */ = {isa = PBXBuildFile; fileRef = 0E2EB3D526ADCB5900B39127 /* punches.mov */; };
 		0E2EB3DB26ADCB5A00B39127 /* quickFeet.mov in Resources */ = {isa = PBXBuildFile; fileRef = 0E2EB3D626ADCB5900B39127 /* quickFeet.mov */; };
 		0E2EB3DC26ADCB5A00B39127 /* pushUps.mov in Resources */ = {isa = PBXBuildFile; fileRef = 0E2EB3D726ADCB5A00B39127 /* pushUps.mov */; };
+		0E2EB3E226ADCB8A00B39127 /* sideHops.mov in Resources */ = {isa = PBXBuildFile; fileRef = 0E2EB3DD26ADCB8900B39127 /* sideHops.mov */; };
+		0E2EB3E326ADCB8A00B39127 /* skaterJumps.mov in Resources */ = {isa = PBXBuildFile; fileRef = 0E2EB3DE26ADCB8900B39127 /* skaterJumps.mov */; };
+		0E2EB3E426ADCB8A00B39127 /* sideLyingLegRaises.mov in Resources */ = {isa = PBXBuildFile; fileRef = 0E2EB3DF26ADCB8A00B39127 /* sideLyingLegRaises.mov */; };
+		0E2EB3E526ADCB8A00B39127 /* sitUps.mov in Resources */ = {isa = PBXBuildFile; fileRef = 0E2EB3E026ADCB8A00B39127 /* sitUps.mov */; };
+		0E2EB3E626ADCB8A00B39127 /* sideCrunches.mov in Resources */ = {isa = PBXBuildFile; fileRef = 0E2EB3E126ADCB8A00B39127 /* sideCrunches.mov */; };
 		0E312B0626A6F69F00E38A06 /* DetailedWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E312B0526A6F69F00E38A06 /* DetailedWorkoutView.swift */; };
 		0E312B0826A6F70B00E38A06 /* WorkingOutSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E312B0726A6F70B00E38A06 /* WorkingOutSessionView.swift */; };
 		0E312B0A26A6F79500E38A06 /* ExercisesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E312B0926A6F79500E38A06 /* ExercisesView.swift */; };
@@ -90,6 +95,11 @@
 		0E2EB3D526ADCB5900B39127 /* punches.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = punches.mov; sourceTree = "<group>"; };
 		0E2EB3D626ADCB5900B39127 /* quickFeet.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = quickFeet.mov; sourceTree = "<group>"; };
 		0E2EB3D726ADCB5A00B39127 /* pushUps.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = pushUps.mov; sourceTree = "<group>"; };
+		0E2EB3DD26ADCB8900B39127 /* sideHops.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = sideHops.mov; sourceTree = "<group>"; };
+		0E2EB3DE26ADCB8900B39127 /* skaterJumps.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = skaterJumps.mov; sourceTree = "<group>"; };
+		0E2EB3DF26ADCB8A00B39127 /* sideLyingLegRaises.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = sideLyingLegRaises.mov; sourceTree = "<group>"; };
+		0E2EB3E026ADCB8A00B39127 /* sitUps.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = sitUps.mov; sourceTree = "<group>"; };
+		0E2EB3E126ADCB8A00B39127 /* sideCrunches.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = sideCrunches.mov; sourceTree = "<group>"; };
 		0E312B0526A6F69F00E38A06 /* DetailedWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedWorkoutView.swift; sourceTree = "<group>"; };
 		0E312B0726A6F70B00E38A06 /* WorkingOutSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkingOutSessionView.swift; sourceTree = "<group>"; };
 		0E312B0926A6F79500E38A06 /* ExercisesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesView.swift; sourceTree = "<group>"; };
@@ -160,6 +170,11 @@
 				0E2EB3D726ADCB5A00B39127 /* pushUps.mov */,
 				0E2EB3D626ADCB5900B39127 /* quickFeet.mov */,
 				0E2EB3D326ADCB5900B39127 /* russianTwists.mov */,
+				0E2EB3E126ADCB8A00B39127 /* sideCrunches.mov */,
+				0E2EB3DD26ADCB8900B39127 /* sideHops.mov */,
+				0E2EB3DF26ADCB8A00B39127 /* sideLyingLegRaises.mov */,
+				0E2EB3E026ADCB8A00B39127 /* sitUps.mov */,
+				0E2EB3DE26ADCB8900B39127 /* skaterJumps.mov */,
 				0E2EB3A126ADC54700B39127 /* squats.mov */,
 			);
 			path = Files;
@@ -333,9 +348,11 @@
 				0E2EB3BB26ADCA4A00B39127 /* froggyGluteLifts.mov in Resources */,
 				0E2EB3A226ADC54700B39127 /* squats.mov in Resources */,
 				0E2EB3C526ADCA8200B39127 /* legRaises.mov in Resources */,
+				0E2EB3E426ADCB8A00B39127 /* sideLyingLegRaises.mov in Resources */,
 				0E2EB3D926ADCB5A00B39127 /* proneFlutterKicks.mov in Resources */,
 				0E2EB3B226ADC9C900B39127 /* armScissors.mov in Resources */,
 				0E2EB3D826ADCB5A00B39127 /* russianTwists.mov in Resources */,
+				0E2EB3E226ADCB8A00B39127 /* sideHops.mov in Resources */,
 				0E2EB3C726ADCA8200B39127 /* jumpingSquats.mov in Resources */,
 				0E2EB3BE26ADCA4A00B39127 /* highKnees.mov in Resources */,
 				0E2EB3D226ADCB0700B39127 /* mountainClimber.mov in Resources */,
@@ -343,15 +360,18 @@
 				0E2EB3B126ADC9C900B39127 /* burpees.mov in Resources */,
 				0E2EB3A826ADC94E00B39127 /* abdominalCrunches.mov in Resources */,
 				0E2EB3BC26ADCA4A00B39127 /* hoverPushUps.mov in Resources */,
+				0E2EB3E526ADCB8A00B39127 /* sitUps.mov in Resources */,
 				0E2EB3A726ADC94E00B39127 /* alternatingHooks.mov in Resources */,
 				0E3568AB2614EADE00BEB5A5 /* Preview Assets.xcassets in Resources */,
 				0E3568A82614EADE00BEB5A5 /* Assets.xcassets in Resources */,
+				0E2EB3E326ADCB8A00B39127 /* skaterJumps.mov in Resources */,
 				0E2EB3B426ADC9C900B39127 /* bycicleCrunches.mov in Resources */,
 				0E2EB3C826ADCA8200B39127 /* legDumbbellCurls.mov in Resources */,
 				0E2EB3C626ADCA8200B39127 /* inchworms.mov in Resources */,
 				0E2EB3B026ADC9C900B39127 /* doorwayCurls.mov in Resources */,
 				0E2EB3AA26ADC94E00B39127 /* armCircles.mov in Resources */,
 				0E2EB3D026ADCB0700B39127 /* lunges.mov in Resources */,
+				0E2EB3E626ADCB8A00B39127 /* sideCrunches.mov in Resources */,
 				0E2EB3CF26ADCB0700B39127 /* mountainClimberSquatThrusts.mov in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
