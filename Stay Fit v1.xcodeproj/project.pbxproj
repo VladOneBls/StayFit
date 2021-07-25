@@ -1,0 +1,496 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0E312B0626A6F69F00E38A06 /* DetailedWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E312B0526A6F69F00E38A06 /* DetailedWorkoutView.swift */; };
+		0E312B0826A6F70B00E38A06 /* WorkingOutSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E312B0726A6F70B00E38A06 /* WorkingOutSessionView.swift */; };
+		0E312B0A26A6F79500E38A06 /* ExercisesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E312B0926A6F79500E38A06 /* ExercisesView.swift */; };
+		0E312B0C26A6F7E000E38A06 /* DetailedExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E312B0B26A6F7E000E38A06 /* DetailedExerciseView.swift */; };
+		0E312B0E26A6F81100E38A06 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E312B0D26A6F81100E38A06 /* ActivityView.swift */; };
+		0E312B1026A6F94B00E38A06 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E312B0F26A6F94B00E38A06 /* HomeView.swift */; };
+		0E312B1226A6FA0F00E38A06 /* ExercisingSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E312B1126A6FA0F00E38A06 /* ExercisingSessionView.swift */; };
+		0E3568A22614EADE00BEB5A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3568A12614EADE00BEB5A5 /* AppDelegate.swift */; };
+		0E3568A42614EADE00BEB5A5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3568A32614EADE00BEB5A5 /* SceneDelegate.swift */; };
+		0E3568A62614EADE00BEB5A5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3568A52614EADE00BEB5A5 /* ContentView.swift */; };
+		0E3568A82614EADE00BEB5A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E3568A72614EADE00BEB5A5 /* Assets.xcassets */; };
+		0E3568AB2614EADE00BEB5A5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E3568AA2614EADE00BEB5A5 /* Preview Assets.xcassets */; };
+		0E3568AE2614EADE00BEB5A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E3568AC2614EADE00BEB5A5 /* LaunchScreen.storyboard */; };
+		0E3C85A626A1C71100C75A45 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E3C85A526A1C71100C75A45 /* GoogleService-Info.plist */; };
+		0E84B42626A5F4C800EF9B51 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E84B42526A5F4C800EF9B51 /* Helper.swift */; };
+		0E84B42826A5F8EC00EF9B51 /* TimerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E84B42726A5F8EC00EF9B51 /* TimerManager.swift */; };
+		0E84B43226A6F44400EF9B51 /* WorkoutsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E84B43126A6F44400EF9B51 /* WorkoutsView.swift */; };
+		0EA9DBCA26A75CEC00BED99A /* ExerciseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA9DBC926A75CEC00BED99A /* ExerciseModel.swift */; };
+		0EA9DBCD26A8568F00BED99A /* ExerciseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA9DBCC26A8568F00BED99A /* ExerciseViewModel.swift */; };
+		40BA9B4B8F960BC6B98C2901 /* Pods_Stay_Fit_v1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBEEBEDAEB731B475126C4D7 /* Pods_Stay_Fit_v1.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0E312B0526A6F69F00E38A06 /* DetailedWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedWorkoutView.swift; sourceTree = "<group>"; };
+		0E312B0726A6F70B00E38A06 /* WorkingOutSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkingOutSessionView.swift; sourceTree = "<group>"; };
+		0E312B0926A6F79500E38A06 /* ExercisesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesView.swift; sourceTree = "<group>"; };
+		0E312B0B26A6F7E000E38A06 /* DetailedExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedExerciseView.swift; sourceTree = "<group>"; };
+		0E312B0D26A6F81100E38A06 /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
+		0E312B0F26A6F94B00E38A06 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		0E312B1126A6FA0F00E38A06 /* ExercisingSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisingSessionView.swift; sourceTree = "<group>"; };
+		0E35689E2614EADE00BEB5A5 /* Stay Fit v1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Stay Fit v1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E3568A12614EADE00BEB5A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0E3568A32614EADE00BEB5A5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		0E3568A52614EADE00BEB5A5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		0E3568A72614EADE00BEB5A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0E3568AA2614EADE00BEB5A5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0E3568AD2614EADE00BEB5A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0E3568AF2614EADE00BEB5A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0E3C85A526A1C71100C75A45 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0E84B42526A5F4C800EF9B51 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		0E84B42726A5F8EC00EF9B51 /* TimerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerManager.swift; sourceTree = "<group>"; };
+		0E84B43126A6F44400EF9B51 /* WorkoutsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsView.swift; sourceTree = "<group>"; };
+		0EA9DBC926A75CEC00BED99A /* ExerciseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseModel.swift; sourceTree = "<group>"; };
+		0EA9DBCC26A8568F00BED99A /* ExerciseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewModel.swift; sourceTree = "<group>"; };
+		414B19E3D455446E4B6B0C5D /* Pods-Stay Fit v1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stay Fit v1.release.xcconfig"; path = "Target Support Files/Pods-Stay Fit v1/Pods-Stay Fit v1.release.xcconfig"; sourceTree = "<group>"; };
+		7AA906638EC09DEF4F5B901F /* Pods-Stay Fit v1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stay Fit v1.debug.xcconfig"; path = "Target Support Files/Pods-Stay Fit v1/Pods-Stay Fit v1.debug.xcconfig"; sourceTree = "<group>"; };
+		EBEEBEDAEB731B475126C4D7 /* Pods_Stay_Fit_v1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stay_Fit_v1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0E35689B2614EADE00BEB5A5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40BA9B4B8F960BC6B98C2901 /* Pods_Stay_Fit_v1.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0E312B0426A6F67B00E38A06 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0E312B0F26A6F94B00E38A06 /* HomeView.swift */,
+				0E84B43126A6F44400EF9B51 /* WorkoutsView.swift */,
+				0E312B0526A6F69F00E38A06 /* DetailedWorkoutView.swift */,
+				0E312B0726A6F70B00E38A06 /* WorkingOutSessionView.swift */,
+				0E312B0926A6F79500E38A06 /* ExercisesView.swift */,
+				0E312B0B26A6F7E000E38A06 /* DetailedExerciseView.swift */,
+				0E312B1126A6FA0F00E38A06 /* ExercisingSessionView.swift */,
+				0E312B0D26A6F81100E38A06 /* ActivityView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0E3568952614EADE00BEB5A5 = {
+			isa = PBXGroup;
+			children = (
+				0E3568A02614EADE00BEB5A5 /* Stay Fit v1 */,
+				0E35689F2614EADE00BEB5A5 /* Products */,
+				B3CF534D036C56DB8E852383 /* Pods */,
+				858178825E16A6D1967ED8BD /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		0E35689F2614EADE00BEB5A5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0E35689E2614EADE00BEB5A5 /* Stay Fit v1.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0E3568A02614EADE00BEB5A5 /* Stay Fit v1 */ = {
+			isa = PBXGroup;
+			children = (
+				0E3568A12614EADE00BEB5A5 /* AppDelegate.swift */,
+				0E3568A32614EADE00BEB5A5 /* SceneDelegate.swift */,
+				0E3568A52614EADE00BEB5A5 /* ContentView.swift */,
+				0EA9DBC826A75CDA00BED99A /* Models */,
+				0EA9DBCB26A8565200BED99A /* ViewModels */,
+				0E312B0426A6F67B00E38A06 /* Views */,
+				0E84B42526A5F4C800EF9B51 /* Helper.swift */,
+				0E84B42726A5F8EC00EF9B51 /* TimerManager.swift */,
+				0E3568A72614EADE00BEB5A5 /* Assets.xcassets */,
+				0E3C85A526A1C71100C75A45 /* GoogleService-Info.plist */,
+				0E3568AC2614EADE00BEB5A5 /* LaunchScreen.storyboard */,
+				0E3568AF2614EADE00BEB5A5 /* Info.plist */,
+				0E3568A92614EADE00BEB5A5 /* Preview Content */,
+			);
+			path = "Stay Fit v1";
+			sourceTree = "<group>";
+		};
+		0E3568A92614EADE00BEB5A5 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				0E3568AA2614EADE00BEB5A5 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		0EA9DBC826A75CDA00BED99A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0EA9DBC926A75CEC00BED99A /* ExerciseModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0EA9DBCB26A8565200BED99A /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				0EA9DBCC26A8568F00BED99A /* ExerciseViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		858178825E16A6D1967ED8BD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EBEEBEDAEB731B475126C4D7 /* Pods_Stay_Fit_v1.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B3CF534D036C56DB8E852383 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7AA906638EC09DEF4F5B901F /* Pods-Stay Fit v1.debug.xcconfig */,
+				414B19E3D455446E4B6B0C5D /* Pods-Stay Fit v1.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0E35689D2614EADE00BEB5A5 /* Stay Fit v1 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0E3568B22614EADE00BEB5A5 /* Build configuration list for PBXNativeTarget "Stay Fit v1" */;
+			buildPhases = (
+				EF6C66D5EBF32594C83AAA75 /* [CP] Check Pods Manifest.lock */,
+				0E35689A2614EADE00BEB5A5 /* Sources */,
+				0E35689B2614EADE00BEB5A5 /* Frameworks */,
+				0E35689C2614EADE00BEB5A5 /* Resources */,
+				2A430893C94A59F32BC4EA29 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Stay Fit v1";
+			productName = "Stay Fit v1";
+			productReference = 0E35689E2614EADE00BEB5A5 /* Stay Fit v1.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0E3568962614EADE00BEB5A5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					0E35689D2614EADE00BEB5A5 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+				};
+			};
+			buildConfigurationList = 0E3568992614EADE00BEB5A5 /* Build configuration list for PBXProject "Stay Fit v1" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0E3568952614EADE00BEB5A5;
+			productRefGroup = 0E35689F2614EADE00BEB5A5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0E35689D2614EADE00BEB5A5 /* Stay Fit v1 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0E35689C2614EADE00BEB5A5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E3568AE2614EADE00BEB5A5 /* LaunchScreen.storyboard in Resources */,
+				0E3C85A626A1C71100C75A45 /* GoogleService-Info.plist in Resources */,
+				0E3568AB2614EADE00BEB5A5 /* Preview Assets.xcassets in Resources */,
+				0E3568A82614EADE00BEB5A5 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2A430893C94A59F32BC4EA29 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Stay Fit v1/Pods-Stay Fit v1-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Stay Fit v1/Pods-Stay Fit v1-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Stay Fit v1/Pods-Stay Fit v1-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EF6C66D5EBF32594C83AAA75 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Stay Fit v1-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0E35689A2614EADE00BEB5A5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E312B0E26A6F81100E38A06 /* ActivityView.swift in Sources */,
+				0E312B0A26A6F79500E38A06 /* ExercisesView.swift in Sources */,
+				0E3568A22614EADE00BEB5A5 /* AppDelegate.swift in Sources */,
+				0E3568A42614EADE00BEB5A5 /* SceneDelegate.swift in Sources */,
+				0E312B1226A6FA0F00E38A06 /* ExercisingSessionView.swift in Sources */,
+				0E3568A62614EADE00BEB5A5 /* ContentView.swift in Sources */,
+				0EA9DBCD26A8568F00BED99A /* ExerciseViewModel.swift in Sources */,
+				0E312B0C26A6F7E000E38A06 /* DetailedExerciseView.swift in Sources */,
+				0E312B0626A6F69F00E38A06 /* DetailedWorkoutView.swift in Sources */,
+				0E84B42826A5F8EC00EF9B51 /* TimerManager.swift in Sources */,
+				0E84B43226A6F44400EF9B51 /* WorkoutsView.swift in Sources */,
+				0E312B1026A6F94B00E38A06 /* HomeView.swift in Sources */,
+				0EA9DBCA26A75CEC00BED99A /* ExerciseModel.swift in Sources */,
+				0E312B0826A6F70B00E38A06 /* WorkingOutSessionView.swift in Sources */,
+				0E84B42626A5F4C800EF9B51 /* Helper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		0E3568AC2614EADE00BEB5A5 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0E3568AD2614EADE00BEB5A5 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0E3568B02614EADE00BEB5A5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		0E3568B12614EADE00BEB5A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0E3568B32614EADE00BEB5A5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7AA906638EC09DEF4F5B901F /* Pods-Stay Fit v1.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Stay Fit v1/Preview Content\"";
+				DEVELOPMENT_TEAM = CFWTQM44TW;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Stay Fit v1/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.petru-vladbalas.Stay-Fit-v1";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0E3568B42614EADE00BEB5A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 414B19E3D455446E4B6B0C5D /* Pods-Stay Fit v1.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Stay Fit v1/Preview Content\"";
+				DEVELOPMENT_TEAM = CFWTQM44TW;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Stay Fit v1/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.petru-vladbalas.Stay-Fit-v1";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0E3568992614EADE00BEB5A5 /* Build configuration list for PBXProject "Stay Fit v1" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0E3568B02614EADE00BEB5A5 /* Debug */,
+				0E3568B12614EADE00BEB5A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0E3568B22614EADE00BEB5A5 /* Build configuration list for PBXNativeTarget "Stay Fit v1" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0E3568B32614EADE00BEB5A5 /* Debug */,
+				0E3568B42614EADE00BEB5A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0E3568962614EADE00BEB5A5 /* Project object */;
+}
