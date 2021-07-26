@@ -1,14 +1,8 @@
-//
-//  WorkoutsView.swift
-//  Stay Fit v1
-//
-//  Created by Vlad Balash on 20/07/2021.
-//
-
 import SwiftUI
 
 struct WorkoutsView: View {
     
+    @EnvironmentObject var workoutViewModel: WorkoutViewModel
     @EnvironmentObject var viewModel: AppViewModel
     
     @State var currentTab = 0
@@ -27,55 +21,63 @@ struct WorkoutsView: View {
             ScrollView {
                 switch currentTab {
                 case 0: // CARDIO TAB
-                    ForEach(cardioWorkouts.indices, id: \.self) { index in
-                        NavigationLink(destination: DetailedWorkoutView(), label: {
-                            Text(self.cardioWorkouts[index])
-                                .font(.title2)
-                                .fontWeight(.bold)
-                                .foregroundColor(.white)
-                                .frame(width: 360, height: 100, alignment: .center)
-                                .background(Color(red: 243/255, green: 189/255, blue: 126/255)) //TODO: replace with relevant image
-                                .cornerRadius(8)
-                        }).padding(1)
+                    ForEach(workoutViewModel.workout) { wo in
+                        if wo.type == "cardio" {
+                            NavigationLink(destination: DetailedWorkoutView(), label: {
+                                Text(wo.name)
+                                    .font(.title2)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(.white)
+                                    .frame(width: 360, height: 100, alignment: .center)
+                                    .background(Color(red: 243/255, green: 189/255, blue: 126/255))
+                                    .cornerRadius(8)
+                            }).padding(1)
+                        }
                     }
                     
                 case 1: // ABS TAB
-                    ForEach(absWorkouts.indices, id: \.self) { index in
-                        NavigationLink(destination: DetailedWorkoutView(), label: {
-                            Text(self.absWorkouts[index])
-                                .font(.title2)
-                                .fontWeight(.bold)
-                                .foregroundColor(.white)
-                                .frame(width: 360, height: 100, alignment: .center)
-                                .background(Color(red: 243/255, green: 189/255, blue: 126/255)) //TODO: replace with relevant image
-                                .cornerRadius(8)
-                        }).padding(1)
+                    ForEach(workoutViewModel.workout) { wo in
+                        if wo.type == "abs" {
+                            NavigationLink(destination: DetailedWorkoutView(), label: {
+                                Text(wo.name)
+                                    .font(.title2)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(.white)
+                                    .frame(width: 360, height: 100, alignment: .center)
+                                    .background(Color(red: 243/255, green: 189/255, blue: 126/255))
+                                    .cornerRadius(8)
+                            }).padding(1)
+                        }
                     }
                     
                 case 2: // LEGS TAB
-                    ForEach(legsWorkouts.indices, id: \.self) { index in
-                        NavigationLink(destination: DetailedWorkoutView(), label: {
-                            Text(self.legsWorkouts[index])
-                                .font(.title2)
-                                .fontWeight(.bold)
-                                .foregroundColor(.white)
-                                .frame(width: 360, height: 100, alignment: .center)
-                                .background(Color(red: 243/255, green: 189/255, blue: 126/255)) //TODO: replace with relevant image
-                                .cornerRadius(8)
-                        }).padding(1)
+                    ForEach(workoutViewModel.workout) { wo in
+                        if wo.type == "legs" {
+                            NavigationLink(destination: DetailedWorkoutView(), label: {
+                                Text(wo.name)
+                                    .font(.title2)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(.white)
+                                    .frame(width: 360, height: 100, alignment: .center)
+                                    .background(Color(red: 243/255, green: 189/255, blue: 126/255))
+                                    .cornerRadius(8)
+                            }).padding(1)
+                        }
                     }
                     
                 case 3: // ARMS TAB
-                    ForEach(armsWorkouts.indices, id: \.self) { index in
-                        NavigationLink(destination: DetailedWorkoutView(), label: {
-                            Text(self.armsWorkouts[index])
-                                .font(.title2)
-                                .fontWeight(.bold)
-                                .foregroundColor(.white)
-                                .frame(width: 360, height: 100, alignment: .center)
-                                .background(Color(red: 243/255, green: 189/255, blue: 126/255)) //TODO: replace with relevant image
-                                .cornerRadius(8)
-                        }).padding(1)
+                    ForEach(workoutViewModel.workout) { wo in
+                        if wo.type == "arms" {
+                            NavigationLink(destination: DetailedWorkoutView(), label: {
+                                Text(wo.name)
+                                    .font(.title2)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(.white)
+                                    .frame(width: 360, height: 100, alignment: .center)
+                                    .background(Color(red: 243/255, green: 189/255, blue: 126/255))
+                                    .cornerRadius(8)
+                            }).padding(1)
+                        }
                     }
                     
                 default:
@@ -97,6 +99,6 @@ struct WorkoutsView: View {
 
 struct WorkoutsView_Previews: PreviewProvider {
     static var previews: some View {
-        WorkoutsView()
+        WorkoutsView().environmentObject(WorkoutViewModel())
     }
 }

@@ -1,10 +1,3 @@
-//
-//  ExercisesView.swift
-//  Stay Fit v1
-//
-//  Created by Vlad Balash on 20/07/2021.
-//
-
 import SwiftUI
 
 struct ExercisesView: View {
@@ -18,7 +11,7 @@ struct ExercisesView: View {
                 //.navigationTitle("Exercises")
             
             ScrollView {
-                ForEach(exerciseViewModel.exercises) { ex in
+                ForEach(exerciseViewModel.exercise) { ex in
                     NavigationLink(
                         destination: DetailedExerciseView(exerciseName: ex.name, steps: ex.steps, videoName: ex.videoName),
                         label: {

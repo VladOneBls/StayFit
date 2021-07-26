@@ -1,10 +1,3 @@
-//
-//  DetailedWorkoutView.swift
-//  Stay Fit v1
-//
-//  Created by Vlad Balash on 20/07/2021.
-//
-
 import SwiftUI
 
 struct DetailedWorkoutView: View {
