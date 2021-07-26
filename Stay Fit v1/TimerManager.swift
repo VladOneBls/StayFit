@@ -29,6 +29,7 @@ class TimerManager: ObservableObject {
             if self.secondsLeft == 0 {
                 self.reset()
                 self.timerMode = .finished
+                
             }
             self.secondsLeft -= 1
         })
@@ -44,4 +45,5 @@ class TimerManager: ObservableObject {
         self.timerMode = .paused
         timer.invalidate()
     }
+    
 }

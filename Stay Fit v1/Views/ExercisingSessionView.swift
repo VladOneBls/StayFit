@@ -46,6 +46,7 @@ struct ExercisingSessionView: View {
                                 .font(.system(size: 150))
                                 .foregroundColor((Color(red: 161/255, green: 99/255, blue: 68/255)))
                                 .padding(.vertical, 60)
+                            
                         }
                         else {
                             Text("\(timerManager.secondsLeft)")
@@ -54,6 +55,15 @@ struct ExercisingSessionView: View {
                                 .padding(.vertical, 60)
                         }
                     }
+                    .onReceive(timerManager.$secondsLeft, perform: { _ in
+                        // video stops and timer restarts when secondsLeft = 0
+                        if timerManager.secondsLeft == 1 {
+                            self.timerManager.reset()
+                            self.isplaying = false
+                            self.player.pause()
+                            self.player.seek(to: .zero)
+                        }
+                    })
                     
                     // PLAY/PAUSE BUTTON
                     Button(action: {
@@ -63,6 +73,7 @@ struct ExercisingSessionView: View {
                             }
                             self.timerManager.timerMode == .running ? self.timerManager.pause() : self.timerManager.start()
                         }
+                        
                         if self.isplaying {
                             self.player.pause()
                             player.isMuted = true
