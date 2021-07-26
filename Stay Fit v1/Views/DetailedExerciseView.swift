@@ -50,7 +50,7 @@ struct DetailedExerciseView: View {
                 .cornerRadius(10)
                 
                 NavigationLink(
-                    destination: ExercisingSessionView(exerciseName: exerciseName),
+                    destination: ExercisingSessionView(exerciseName: exerciseName, videoName: videoName),
                     label: {
                         Text("START")
                             .font(.title3)
