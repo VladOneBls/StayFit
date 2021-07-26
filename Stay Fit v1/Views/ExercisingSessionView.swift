@@ -16,19 +16,13 @@ struct ExercisingSessionView: View {
     var body: some View {
         
         VStack {
-            
-            ZStack {
-                
-                VideoPlayer(player: $player)
-                
-            }.frame(width: 390, height: 219)
-            .onTapGesture {
-                
-                self.showcontrols = true
-            }
+            CustomVideoPlayer(player: $player)
+                .frame(width: 390, height: 219)
+                .onTapGesture {
+                    self.showcontrols = true
+                }
             
             GeometryReader {_ in
-                
                 VStack {
                     Text(exerciseName)
                         .font(.largeTitle).bold()
@@ -64,18 +58,15 @@ struct ExercisingSessionView: View {
                             self.timerManager.timerMode == .running ? self.timerManager.pause() : self.timerManager.start()
                         }
                         if self.isplaying {
-                            
                             self.player.pause()
-                            //player.isMuted.toggle()
+                            player.isMuted = true
                             self.isplaying = false
                         }
                         else {
-                            
                             self.player.play()
-                            //player.isMuted.toggle()
+                            player.isMuted = true
                             self.isplaying = true
                         }
-
                     }, label: {
                         Image(systemName: timerManager.timerMode == .running ? "pause.circle.fill" : "play.circle.fill")
                             .resizable()
@@ -91,7 +82,6 @@ struct ExercisingSessionView: View {
                         self.player.pause()
                         self.isplaying = false
                         self.player.seek(to: .zero)
-                        
                     }, label: {
                         HStack(spacing: 15) {
                             Image(systemName: "arrow.clockwise")
@@ -103,24 +93,23 @@ struct ExercisingSessionView: View {
                         .background((Color(red: 243/255, green: 189/255, blue: 126/255)))
                         .cornerRadius(50)
                         .padding(.top, 15)
-
                     })
                     
                     Spacer()
-                } // closing VStack in GeometryReader
+                }
                 .offset(y: 30)
             }
-        } // closing first VStack
+        }
         .offset(y: 35)
         .edgesIgnoringSafeArea(.all)
     }
 }
 
-struct VideoPlayer : UIViewControllerRepresentable {
+struct CustomVideoPlayer : UIViewControllerRepresentable {
     
     @Binding var player: AVPlayer
     
-    func makeUIViewController(context: UIViewControllerRepresentableContext<VideoPlayer>) -> AVPlayerViewController {
+    func makeUIViewController(context: UIViewControllerRepresentableContext<CustomVideoPlayer>) -> AVPlayerViewController {
         
         let controller = AVPlayerViewController()
         controller.player = player
@@ -128,12 +117,11 @@ struct VideoPlayer : UIViewControllerRepresentable {
         return controller
     }
     
-    func updateUIViewController(_ uiViewController: AVPlayerViewController, context: UIViewControllerRepresentableContext<VideoPlayer>) {
+    func updateUIViewController(_ uiViewController: AVPlayerViewController, context: UIViewControllerRepresentableContext<CustomVideoPlayer>) {
         
     }
 }
 
-// PREVIEW
 struct ExercisingSessionView_Previews: PreviewProvider {
     static var previews: some View {
         ExercisingSessionView(exerciseName: "Squats", videoName: "squats")

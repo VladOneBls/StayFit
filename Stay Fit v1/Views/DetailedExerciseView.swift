@@ -11,22 +11,22 @@ struct DetailedExerciseView: View {
     
     var body: some View {
         
-        //let player = AVPlayer(url: URL(fileURLWithPath: Bundle.main.path(forResource: videoName, ofType: "mov")!))
+        let player = AVPlayer(url: URL(fileURLWithPath: Bundle.main.path(forResource: videoName, ofType: "mov")!))
         
         ZStack {
             Image("background").edgesIgnoringSafeArea(.all)
             
             VStack {
-//                VStack {
-//                    VideoPlayer(player: player)
-//                        .frame(width: 390, height: 219)
-//                        .cornerRadius(10)
-//                        .onDisappear(){
-//                            player.pause()
-//                            player.seek(to: .zero) // self.player.currentItem?.duration.seconds
-//                        }
-//                        //.disabled(true) // displays the video controls for 3 secs and then dissapear
-//                }
+                VStack {
+                    VideoPlayer(player: player)
+                        .frame(width: 390, height: 219)
+                        .cornerRadius(10)
+                        .onDisappear(){
+                            player.pause()
+                            player.seek(to: .zero) // self.player.currentItem?.duration.seconds
+                        }
+                        //.disabled(true) // displays the video controls for 3 secs and then dissapear
+                }
                 
                 Text(exerciseName)
                     .font(.largeTitle).bold()
