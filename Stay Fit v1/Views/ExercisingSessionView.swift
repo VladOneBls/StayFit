@@ -16,10 +16,6 @@ struct ExercisingSessionView: View {
     
     var body: some View {
         VStack {
-//            Image("lunges")
-//                .resizable()
-//                .aspectRatio(contentMode: .fit)
-            
             Rectangle()
                 .foregroundColor((Color(red: 243/255, green: 189/255, blue: 126/255)))
                 .frame(width: 390, height: 250)

@@ -28,13 +28,9 @@ struct DetailedExerciseView: View {
                     VideoPlayer(player: player)
                         .frame(width: 390, height: 219)
                         .cornerRadius(10)
-//                        .onAppear(){
-//                            player.play()
-//                        }
                         .onDisappear(){
                             player.pause()
                             player.seek(to: .zero)
-                            
                         }
                         //.disabled(true) // displays the video controls for 3 secs and then dissapear
                 }
@@ -82,7 +78,7 @@ struct DetailedExerciseView: View {
 
 struct DetailedExerciseView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailedExerciseView(exerciseName: "Exercise Name", steps: ["1", "2", "3", "4", "5"], videoName: "burpees")
+        DetailedExerciseView(exerciseName: "Exercise Name", steps: ["1st exercise", "2nd exercise", "3rd exercise", "4th exercise", "5th exercise"], videoName: "burpees")
             .environmentObject(ExerciseViewModel())
     }
 }
