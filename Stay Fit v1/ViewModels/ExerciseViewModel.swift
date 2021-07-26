@@ -1,22 +1,15 @@
-//
-//  ExerciseViewModel.swift
-//  Stay Fit v1
-//
-//  Created by Vlad Balash on 21/07/2021.
-//
-
 import Foundation
 
 class ExerciseViewModel: ObservableObject {
     
-    @Published var exercises: [ExerciseModel] = []
+    @Published var exercise: [ExerciseModel] = []
     
     init() {
-        getExercises()
+        getExercise()
     }
     
-    func getExercises() {
-        let newExercises = [
+    func getExercise() {
+        let newExercise = [
             ExerciseModel(name: "LUNGES",
                           logo: "logoLunges",
                           videoName: "lunges",
@@ -472,9 +465,6 @@ class ExerciseViewModel: ObservableObject {
                           targetMuscles: ["cardio", "abs"])
         ]
         
-        exercises.append(contentsOf: newExercises)
+        exercise.append(contentsOf: newExercise)
     }
-    
-    // add any functions as delete/move
-    
 }
