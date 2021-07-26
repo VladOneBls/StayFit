@@ -9,9 +9,15 @@ struct ExercisingSessionView: View {
     let exerciseName: String
     let videoName: String
     
-    @State var player = AVPlayer(url: URL(fileURLWithPath: Bundle.main.path(forResource: "squats", ofType: "mov")!))
+    @State var player : AVPlayer
     @State var isplaying = false
     @State var showcontrols = false
+    
+    init(exerciseName: String, videoName: String) {
+        self.exerciseName = exerciseName
+        self.videoName = videoName
+        self._player = State(initialValue: AVPlayer(url: URL(fileURLWithPath: Bundle.main.path(forResource: videoName, ofType: "mov")!)))
+    }
     
     var body: some View {
         
@@ -28,7 +34,7 @@ struct ExercisingSessionView: View {
                         .font(.largeTitle).bold()
                         .foregroundColor((Color(red: 161/255, green: 99/255, blue: 68/255)))
                         .padding(1)
-                        .frame(width: 390, alignment: .center) // extra to align the VStack to center
+                        .frame(width: 390, alignment: .center)
                     
                     ZStack {
                         Circle()
