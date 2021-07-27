@@ -13,7 +13,7 @@ class WorkoutViewModel: ObservableObject {
             WorkoutModel(name: "WARM UP",
                           picture: "",
                           type: "cardio",
-                          exercises: ["1", "2", "3"]),
+                          exercises: ["lunges", "squats", "bycicleCrunches", "legRaises"]),
             WorkoutModel(name: "LEGS ON FIRE",
                           picture: "",
                           type: "legs",

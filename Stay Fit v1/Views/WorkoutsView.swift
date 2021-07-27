@@ -7,12 +7,7 @@ struct WorkoutsView: View {
     
     @State var currentTab = 0
     
-    @State private var cardioWorkouts = ["WARM UP", "LEGS ON FIRE", "STRONGER MUSCLES", "TONING", "BUTT & THIGHS", "1", "2", "3"]
-    @State private var absWorkouts = ["Workout 1", "Workout 2", "Workout 3", "Workout 4", "Workout 5", "Workout 6", "Workout 7", "Workout 8"]
-    @State private var legsWorkouts = ["Workout 1", "Workout 2", "Workout 3", "Workout 4", "Workout 5", "Workout 6", "Workout 7", "Workout 8"]
-    @State private var armsWorkouts = ["Workout 1", "Workout 2", "Workout 3", "Workout 4", "Workout 5", "Workout 6", "Workout 7", "Workout 8"]
-    
-    var body: some View {
+   var body: some View {
         ZStack {
             Image("background")
                 .edgesIgnoringSafeArea(.all)
@@ -23,7 +18,7 @@ struct WorkoutsView: View {
                 case 0: // CARDIO TAB
                     ForEach(workoutViewModel.workout) { wo in
                         if wo.type == "cardio" {
-                            NavigationLink(destination: DetailedWorkoutView(), label: {
+                            NavigationLink(destination: DetailedWorkoutView(workoutName: wo.name, workoutExercises: wo.exercises), label: {
                                 Text(wo.name)
                                     .font(.title2)
                                     .fontWeight(.bold)
@@ -38,7 +33,7 @@ struct WorkoutsView: View {
                 case 1: // ABS TAB
                     ForEach(workoutViewModel.workout) { wo in
                         if wo.type == "abs" {
-                            NavigationLink(destination: DetailedWorkoutView(), label: {
+                            NavigationLink(destination: DetailedWorkoutView(workoutName: wo.name, workoutExercises: wo.exercises), label: {
                                 Text(wo.name)
                                     .font(.title2)
                                     .fontWeight(.bold)
@@ -53,7 +48,7 @@ struct WorkoutsView: View {
                 case 2: // LEGS TAB
                     ForEach(workoutViewModel.workout) { wo in
                         if wo.type == "legs" {
-                            NavigationLink(destination: DetailedWorkoutView(), label: {
+                            NavigationLink(destination: DetailedWorkoutView(workoutName: wo.name, workoutExercises: wo.exercises), label: {
                                 Text(wo.name)
                                     .font(.title2)
                                     .fontWeight(.bold)
@@ -68,7 +63,7 @@ struct WorkoutsView: View {
                 case 3: // ARMS TAB
                     ForEach(workoutViewModel.workout) { wo in
                         if wo.type == "arms" {
-                            NavigationLink(destination: DetailedWorkoutView(), label: {
+                            NavigationLink(destination: DetailedWorkoutView(workoutName: wo.name, workoutExercises: wo.exercises), label: {
                                 Text(wo.name)
                                     .font(.title2)
                                     .fontWeight(.bold)

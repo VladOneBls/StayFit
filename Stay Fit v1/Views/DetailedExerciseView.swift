@@ -23,9 +23,8 @@ struct DetailedExerciseView: View {
                         .cornerRadius(10)
                         .onDisappear(){
                             player.pause()
-                            player.seek(to: .zero) // self.player.currentItem?.duration.seconds
+                            player.seek(to: .zero) //self.player.currentItem?.duration.seconds
                         }
-                        //.disabled(true) // displays the video controls for 3 secs and then dissapear
                 }
                 
                 Text(exerciseName)

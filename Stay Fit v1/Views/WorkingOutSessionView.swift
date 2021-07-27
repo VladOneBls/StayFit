@@ -81,7 +81,7 @@ struct WorkingOutSessionView: View {
                 }
                 .padding()
                 .background((Color(red: 243/255, green: 189/255, blue: 126/255)))
-                .cornerRadius(50)
+                .cornerRadius(15)
             })
             
             Spacer()
