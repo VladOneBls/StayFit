@@ -6,8 +6,7 @@ struct WorkoutModel: Identifiable {
     let name: String
     let picture: String
     let type: String
-    let exercises: [String]
-    
-    let ex: [ExerciseModel]
-    
+    let exercisesNames: [String]
+    let exercisesLogos: [String]
+    let videoNames: [String]
 }

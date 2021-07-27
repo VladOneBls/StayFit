@@ -6,8 +6,8 @@ struct DetailedWorkoutView: View {
     @EnvironmentObject var exerciseViewModel: ExerciseViewModel
     
     let workoutName: String
-    let workoutExercises: [String]
-    let ex: [ExerciseModel]
+    let exercisesNames: [String]
+    let exercisesLogos: [String]
     
     @State var currentTab = 0
     
@@ -31,20 +31,23 @@ struct DetailedWorkoutView: View {
                 Spacer()
                 
                 ScrollView {
-                    ForEach(ex) { index in
+                    ForEach(0..<exercisesNames.count) { index in
                         HStack {
-                            Image(index.logo)
+                            Image(exercisesLogos[index])
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 100.0, height: 100.0)
                                 .cornerRadius(5)
                                 .padding(.leading, 25)
-                            Text(index.name)
+                            
+                            Text(exercisesNames[index])
                                 .fontWeight(.bold)
                                 .padding(.leading, 20)
+                            
                             Spacer()
-                        }
-                    }.padding(.top, 10)
+                        }.padding(.top, 10)
+                        .padding(.bottom, -5)
+                    }
                 }.offset(y: -5)
                 
                 Spacer()
@@ -78,7 +81,7 @@ struct DetailedWorkoutView: View {
 
 struct DetailedWorkoutView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailedWorkoutView(workoutName:"WARM UP",workoutExercises:["LUNGES","SQUATS","BYCICLE CRUNCHES","LEG RAISES"],ex: [ExerciseModel(name:"LUNGES",logo:"logoLunges",videoName:"lunges",steps:[""],targetMuscles:["legs"]),ExerciseModel(name:"SQUATS",logo:"logoSquats",videoName:"squats",steps:[""],targetMuscles:["legs"]),ExerciseModel(name:"BICYCLE CRUNCHES",logo:"logoBycicleCrunches",videoName:"bycicleCrunches",steps:[""],targetMuscles:["abs"]),ExerciseModel(name:"LEG RAISES",logo:"logoLegRaises",videoName:"legRaises",steps:[""],targetMuscles:["abs"])])
+        DetailedWorkoutView(workoutName:"WARM UP",exercisesNames:["LUNGES","SQUATS","BYCICLE CRUNCHES","LEG RAISES"],exercisesLogos: ["logoLunges", "logoSquats", "logoBycicleCrunches", "logoLegRaises"])
             .environmentObject(WorkoutViewModel())
             .environmentObject(ExerciseViewModel())
     }

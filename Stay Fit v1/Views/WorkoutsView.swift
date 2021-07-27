@@ -18,7 +18,7 @@ struct WorkoutsView: View {
                 case 0: // CARDIO TAB
                     ForEach(workoutViewModel.workout) { wo in
                         if wo.type == "cardio" {
-                            NavigationLink(destination: DetailedWorkoutView(workoutName: wo.name, workoutExercises: wo.exercises, ex: wo.ex), label: {
+                            NavigationLink(destination: DetailedWorkoutView(workoutName: wo.name, exercisesNames: wo.exercisesNames, exercisesLogos: wo.exercisesLogos), label: {
                                 Text(wo.name)
                                     .font(.title2)
                                     .fontWeight(.bold)
@@ -32,7 +32,7 @@ struct WorkoutsView: View {
                 case 1: // ABS TAB
                     ForEach(workoutViewModel.workout) { wo in
                         if wo.type == "abs" {
-                            NavigationLink(destination: DetailedWorkoutView(workoutName: wo.name, workoutExercises: wo.exercises, ex: wo.ex), label: {
+                            NavigationLink(destination: DetailedWorkoutView(workoutName: wo.name, exercisesNames: wo.exercisesNames, exercisesLogos: wo.exercisesLogos), label: {
                                 Text(wo.name)
                                     .font(.title2)
                                     .fontWeight(.bold)
@@ -46,7 +46,7 @@ struct WorkoutsView: View {
                 case 2: // LEGS TAB
                     ForEach(workoutViewModel.workout) { wo in
                         if wo.type == "legs" {
-                            NavigationLink(destination: DetailedWorkoutView(workoutName: wo.name, workoutExercises: wo.exercises, ex: wo.ex), label: {
+                            NavigationLink(destination: DetailedWorkoutView(workoutName: wo.name, exercisesNames: wo.exercisesNames, exercisesLogos: wo.exercisesLogos), label: {
                                 Text(wo.name)
                                     .font(.title2)
                                     .fontWeight(.bold)
@@ -60,7 +60,7 @@ struct WorkoutsView: View {
                 case 3: // ARMS TAB
                     ForEach(workoutViewModel.workout) { wo in
                         if wo.type == "arms" {
-                            NavigationLink(destination: DetailedWorkoutView(workoutName: wo.name, workoutExercises: wo.exercises, ex: wo.ex), label: {
+                            NavigationLink(destination: DetailedWorkoutView(workoutName: wo.name, exercisesNames: wo.exercisesNames, exercisesLogos: wo.exercisesLogos), label: {
                                 Text(wo.name)
                                     .font(.title2)
                                     .fontWeight(.bold)
