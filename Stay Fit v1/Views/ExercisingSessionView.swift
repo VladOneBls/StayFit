@@ -20,7 +20,6 @@ struct ExercisingSessionView: View {
     }
     
     var body: some View {
-        
         VStack {
             CustomVideoPlayer(player: $player)
                 .frame(width: 390, height: 219)
@@ -36,6 +35,7 @@ struct ExercisingSessionView: View {
                         .padding(1)
                         .frame(width: 390, alignment: .center)
                     
+                    // COUNTDOWN TIMER
                     ZStack {
                         Circle()
                             .stroke(Color(red: 243/255, green: 189/255, blue: 126/255), lineWidth: 12)
@@ -69,7 +69,7 @@ struct ExercisingSessionView: View {
                     Button(action: {
                         if timerManager.timerMode != .finished {
                             if self.timerManager.timerMode == .initial {
-                                self.timerManager.setTimerLength(seconds: 5)
+                                self.timerManager.setTimerLength(seconds: 20) // Initializing SecondsLeft !!!!!!!!!!!!
                             }
                             self.timerManager.timerMode == .running ? self.timerManager.pause() : self.timerManager.start()
                         }
@@ -113,8 +113,7 @@ struct ExercisingSessionView: View {
                     })
                     
                     Spacer()
-                }
-                .offset(y: 30)
+                }.offset(y: 30)
             }
         }
         .offset(y: 35)

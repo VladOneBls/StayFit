@@ -8,6 +8,7 @@ struct DetailedWorkoutView: View {
     let workoutName: String
     let exercisesNames: [String]
     let exercisesLogos: [String]
+    let videoNames: [String]
     
     @State var currentTab = 0
     
@@ -63,7 +64,7 @@ struct DetailedWorkoutView: View {
                     
                     // START BUTTON
                     NavigationLink(
-                        destination: WorkingOutSessionView(),
+                        destination: WorkingOutSessionView(exercisesNames: exercisesNames, videoNames: videoNames),
                         label: {
                             Text("START")
                                 .font(.title3)
@@ -81,7 +82,7 @@ struct DetailedWorkoutView: View {
 
 struct DetailedWorkoutView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailedWorkoutView(workoutName:"WARM UP",exercisesNames:["LUNGES","SQUATS","BYCICLE CRUNCHES","LEG RAISES"],exercisesLogos: ["logoLunges", "logoSquats", "logoBycicleCrunches", "logoLegRaises"])
+        DetailedWorkoutView(workoutName:"WARM UP",exercisesNames:["LUNGES","SQUATS","BYCICLE CRUNCHES","LEG RAISES"],exercisesLogos:["logoLunges","logoSquats","logoBycicleCrunches","logoLegRaises"],videoNames:["lunges","squats","bycicleCrunches","legRaises"])
             .environmentObject(WorkoutViewModel())
             .environmentObject(ExerciseViewModel())
     }
