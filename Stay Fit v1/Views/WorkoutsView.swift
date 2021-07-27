@@ -18,7 +18,7 @@ struct WorkoutsView: View {
                 case 0: // CARDIO TAB
                     ForEach(workoutViewModel.workout) { wo in
                         if wo.type == "cardio" {
-                            NavigationLink(destination: DetailedWorkoutView(workoutName: wo.name, workoutExercises: wo.exercises), label: {
+                            NavigationLink(destination: DetailedWorkoutView(workoutName: wo.name, workoutExercises: wo.exercises, ex: wo.ex), label: {
                                 Text(wo.name)
                                     .font(.title2)
                                     .fontWeight(.bold)
@@ -29,11 +29,10 @@ struct WorkoutsView: View {
                             }).padding(1)
                         }
                     }
-                    
                 case 1: // ABS TAB
                     ForEach(workoutViewModel.workout) { wo in
                         if wo.type == "abs" {
-                            NavigationLink(destination: DetailedWorkoutView(workoutName: wo.name, workoutExercises: wo.exercises), label: {
+                            NavigationLink(destination: DetailedWorkoutView(workoutName: wo.name, workoutExercises: wo.exercises, ex: wo.ex), label: {
                                 Text(wo.name)
                                     .font(.title2)
                                     .fontWeight(.bold)
@@ -44,11 +43,10 @@ struct WorkoutsView: View {
                             }).padding(1)
                         }
                     }
-                    
                 case 2: // LEGS TAB
                     ForEach(workoutViewModel.workout) { wo in
                         if wo.type == "legs" {
-                            NavigationLink(destination: DetailedWorkoutView(workoutName: wo.name, workoutExercises: wo.exercises), label: {
+                            NavigationLink(destination: DetailedWorkoutView(workoutName: wo.name, workoutExercises: wo.exercises, ex: wo.ex), label: {
                                 Text(wo.name)
                                     .font(.title2)
                                     .fontWeight(.bold)
@@ -59,11 +57,10 @@ struct WorkoutsView: View {
                             }).padding(1)
                         }
                     }
-                    
                 case 3: // ARMS TAB
                     ForEach(workoutViewModel.workout) { wo in
                         if wo.type == "arms" {
-                            NavigationLink(destination: DetailedWorkoutView(workoutName: wo.name, workoutExercises: wo.exercises), label: {
+                            NavigationLink(destination: DetailedWorkoutView(workoutName: wo.name, workoutExercises: wo.exercises, ex: wo.ex), label: {
                                 Text(wo.name)
                                     .font(.title2)
                                     .fontWeight(.bold)
@@ -74,11 +71,10 @@ struct WorkoutsView: View {
                             }).padding(1)
                         }
                     }
-                    
                 default:
                     Text("ERROR")
-                } // closing switch
-            }.offset(y: 150) // closing ScrollView
+                }
+            }.offset(y: 150)
             
             Picker(selection: $currentTab, label: Text("")) {
                 Text("Cardio").tag(0)
@@ -88,7 +84,7 @@ struct WorkoutsView: View {
             }.pickerStyle(SegmentedPickerStyle())
             .padding(.top, -340)
             .padding(.horizontal, 20)
-        } // closing first ZStack
+        }
     }
 }
 

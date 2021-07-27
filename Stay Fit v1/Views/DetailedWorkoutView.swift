@@ -7,6 +7,7 @@ struct DetailedWorkoutView: View {
     
     let workoutName: String
     let workoutExercises: [String]
+    let ex: [ExerciseModel]
     
     @State var currentTab = 0
     
@@ -30,15 +31,15 @@ struct DetailedWorkoutView: View {
                 Spacer()
                 
                 ScrollView {
-                    ForEach(workoutExercises.indices, id: \.self) { index in
+                    ForEach(ex) { index in
                         HStack {
-                            Image("logoLegDumbbellCurls")
+                            Image(index.logo)
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 100.0, height: 100.0)
                                 .cornerRadius(5)
                                 .padding(.leading, 25)
-                            Text(self.workoutExercises[index])
+                            Text(index.name)
                                 .fontWeight(.bold)
                                 .padding(.leading, 20)
                             Spacer()
@@ -77,7 +78,7 @@ struct DetailedWorkoutView: View {
 
 struct DetailedWorkoutView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailedWorkoutView(workoutName: "Workout Name", workoutExercises: ["LUNGES", "SQUATS", "BYCICLE CRUNCHES", "LEG RAISES"])
+        DetailedWorkoutView(workoutName:"WARM UP",workoutExercises:["LUNGES","SQUATS","BYCICLE CRUNCHES","LEG RAISES"],ex: [ExerciseModel(name:"LUNGES",logo:"logoLunges",videoName:"lunges",steps:[""],targetMuscles:["legs"]),ExerciseModel(name:"SQUATS",logo:"logoSquats",videoName:"squats",steps:[""],targetMuscles:["legs"]),ExerciseModel(name:"BICYCLE CRUNCHES",logo:"logoBycicleCrunches",videoName:"bycicleCrunches",steps:[""],targetMuscles:["abs"]),ExerciseModel(name:"LEG RAISES",logo:"logoLegRaises",videoName:"legRaises",steps:[""],targetMuscles:["abs"])])
             .environmentObject(WorkoutViewModel())
             .environmentObject(ExerciseViewModel())
     }
