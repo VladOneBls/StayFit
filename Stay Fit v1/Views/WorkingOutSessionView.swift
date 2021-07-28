@@ -7,12 +7,13 @@ struct WorkingOutSessionView: View {
     @EnvironmentObject var workoutViewModel: WorkoutViewModel
     @ObservedObject var timerManager = TimerManager()
     
-    var exerciseTime = 20
+    var exerciseTime = 20 // for LEVEL
     
     let exercisesNames: [String]
     let videoNames: [String]
     
     @State var customPlayer : AVPlayer
+    @State var currentItem = 0
     @State var isplaying = false
     @State var showcontrols = false
     
@@ -24,7 +25,7 @@ struct WorkingOutSessionView: View {
     
     var body: some View {
         VStack {
-            CustomVideoPlayer(player: $customPlayer)
+            CustomVP(player: customPlayer)
                 .frame(width: 390, height: 219)
                 .onTapGesture {
                     self.showcontrols = true
@@ -32,7 +33,7 @@ struct WorkingOutSessionView: View {
             
             GeometryReader {_ in
                 VStack {
-                    Text(exercisesNames[0])
+                    Text(exercisesNames[currentItem])
                         .font(.largeTitle).bold()
                         .foregroundColor((Color(red: 161/255, green: 99/255, blue: 68/255)))
                         .padding(1)
@@ -58,22 +59,16 @@ struct WorkingOutSessionView: View {
                                 .padding(.vertical, 60)
                         }
                     }
-                    .onReceive(timerManager.$secondsLeft, perform: { _ in
-                        // video stops and timer restarts when secondsLeft = 0
-                        if timerManager.secondsLeft == 1 {
-                            self.timerManager.reset()
-                            self.isplaying = false
-                            self.customPlayer.pause()
-                            self.customPlayer.seek(to: .zero)
-                        }
-                    })
                     
                     // 3 BUTTONS
                     HStack {
                         
                         // BACK BUTTON
                         Button(action: {
-                            // code
+                            currentItem = min(currentItem, currentItem - 1)
+                            self.timerManager.reset()
+                            self.timerManager.setTimerLength(seconds: 20)
+                            self.timerManager.start()
                         }, label: {
                             Image(systemName: "lessthan")
                                 .resizable()
@@ -94,12 +89,12 @@ struct WorkingOutSessionView: View {
                             
                             if self.isplaying {
                                 self.customPlayer.pause()
-                                customPlayer.isMuted = true
+                                //self.customPlayer.isMuted = true
                                 self.isplaying = false
                             }
                             else {
                                 self.customPlayer.play()
-                                customPlayer.isMuted = true
+                                //customPlayer.isMuted = true
                                 self.isplaying = true
                             }
                         }, label: {
@@ -110,10 +105,22 @@ struct WorkingOutSessionView: View {
                                 .foregroundColor((Color(red: 243/255, green: 189/255, blue: 126/255)))
                                 .padding(.top, 3)
                         })
+                        .onChange(of: timerManager.finish, perform: { value in
+                                if timerManager.finish == true {
+                                    currentItem = min(videoNames.count - 1, currentItem + 1)
+                                    self.timerManager.reset()
+                                    self.timerManager.setTimerLength(seconds: 20)
+                                    self.timerManager.start()
+                                    self.timerManager.finish = false
+                                }
+                        })
                         
                         // FORWARD BUTTON
                         Button(action: {
-                            // code
+                            currentItem = min(videoNames.count - 1, currentItem + 1)
+                            self.timerManager.reset()
+                            self.timerManager.setTimerLength(seconds: 20)
+                            self.timerManager.start()
                         }, label: {
                             Image(systemName: "greaterthan")
                                 .resizable()
@@ -149,8 +156,14 @@ struct WorkingOutSessionView: View {
         }
         .offset(y: 35)
         .edgesIgnoringSafeArea(.all)
+        .onChange(of: currentItem) { currentItem in
+            print("Going to:",currentItem)
+            self.customPlayer.pause()
+            self.customPlayer = AVPlayer(url: URL(fileURLWithPath: Bundle.main.path(forResource: videoNames[currentItem], ofType: "mov")!))
+            self.customPlayer.play()
+            //self.customPlayer.isMuted = true
     }
-}
+    }
 
 struct WorkingOutSessionView_Previews: PreviewProvider {
     static var previews: some View {
@@ -158,4 +171,23 @@ struct WorkingOutSessionView_Previews: PreviewProvider {
             .environmentObject(WorkoutViewModel())
             .environmentObject(ExerciseViewModel())
     }
+}
+
+struct CustomVP : UIViewControllerRepresentable {
+    
+    var player: AVPlayer
+    
+    func makeUIViewController(context: UIViewControllerRepresentableContext<CustomVP>) -> AVPlayerViewController {
+          
+        let controller = AVPlayerViewController()
+        controller.player = player
+        controller.showsPlaybackControls = false
+        return controller
+    }
+    
+    func updateUIViewController(_ uiViewController: AVPlayerViewController, context: UIViewControllerRepresentableContext<CustomVP>) {
+        uiViewController.player = player
+    }
+}
+
 }

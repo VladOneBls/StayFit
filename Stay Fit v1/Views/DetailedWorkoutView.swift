@@ -10,7 +10,7 @@ struct DetailedWorkoutView: View {
     let exercisesLogos: [String]
     let videoNames: [String]
     
-    @State var currentTab = 0
+    @State var currentTab = 1
     
     var body: some View {
         ZStack {
@@ -56,9 +56,9 @@ struct DetailedWorkoutView: View {
                 VStack {
                     // CATEGORY PICKER
                     Picker(selection: $currentTab, label: Text("")) {
-                        Text("Beginner").tag(0)
-                        Text("Intermediate").tag(1)
-                        Text("Advanced").tag(2)
+                        Text("Beginner").tag(1)
+                        Text("Intermediate").tag(2)
+                        Text("Advanced").tag(3)
                     }.pickerStyle(SegmentedPickerStyle())
                     .padding(.horizontal, 20)
                     
