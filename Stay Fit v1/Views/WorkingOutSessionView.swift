@@ -12,10 +12,10 @@ struct WorkingOutSessionView: View {
     let exercisesNames: [String]
     let videoNames: [String]
     
-    @State var customPlayer : AVPlayer
-    @State var currentItem = 0
-    @State var isplaying = false
-    @State var showcontrols = false
+    @State private var customPlayer : AVPlayer
+    @State private var currentItem = 0
+    @State private var isplaying = false
+    @State private var showcontrols = false
     
     init(exercisesNames: [String], videoNames: [String]) {
         self.exercisesNames = exercisesNames
@@ -60,15 +60,16 @@ struct WorkingOutSessionView: View {
                         }
                     }
                     
-                    // 3 BUTTONS
                     HStack {
                         
                         // BACK BUTTON
                         Button(action: {
-                            currentItem = min(currentItem, currentItem - 1)
-                            self.timerManager.reset()
-                            self.timerManager.setTimerLength(seconds: 20)
-                            self.timerManager.start()
+                            if currentItem != 0 {
+                                currentItem = min(currentItem, currentItem - 1)
+                                self.timerManager.reset()
+                                self.timerManager.setTimerLength(seconds: 20)
+                                self.timerManager.start()
+                            }
                         }, label: {
                             Image(systemName: "lessthan")
                                 .resizable()
@@ -89,12 +90,12 @@ struct WorkingOutSessionView: View {
                             
                             if self.isplaying {
                                 self.customPlayer.pause()
-                                //self.customPlayer.isMuted = true
+                                self.customPlayer.isMuted = true
                                 self.isplaying = false
                             }
                             else {
                                 self.customPlayer.play()
-                                //customPlayer.isMuted = true
+                                customPlayer.isMuted = true
                                 self.isplaying = true
                             }
                         }, label: {
@@ -106,21 +107,31 @@ struct WorkingOutSessionView: View {
                                 .padding(.top, 3)
                         })
                         .onChange(of: timerManager.finish, perform: { value in
-                                if timerManager.finish == true {
-                                    currentItem = min(videoNames.count - 1, currentItem + 1)
-                                    self.timerManager.reset()
-                                    self.timerManager.setTimerLength(seconds: 20)
-                                    self.timerManager.start()
-                                    self.timerManager.finish = false
-                                }
+                            if timerManager.finish && currentItem < videoNames.count-1 {
+                                print(currentItem)
+                                currentItem = min(videoNames.count - 1, currentItem + 1)
+                                self.timerManager.reset()
+                                self.timerManager.setTimerLength(seconds: 20)
+                                self.timerManager.start()
+                                self.timerManager.finish = false
+                            }
+                        })
+                        .onReceive(timerManager.$finish, perform: { _ in
+                            if currentItem == videoNames.count-1 {
+                                self.customPlayer.pause()
+                                self.isplaying = false
+                            }
                         })
                         
                         // FORWARD BUTTON
                         Button(action: {
-                            currentItem = min(videoNames.count - 1, currentItem + 1)
-                            self.timerManager.reset()
-                            self.timerManager.setTimerLength(seconds: 20)
-                            self.timerManager.start()
+                            if currentItem < videoNames.count-1 {
+                                print(currentItem)
+                                currentItem = min(videoNames.count - 1, currentItem + 1)
+                                self.timerManager.reset()
+                                self.timerManager.setTimerLength(seconds: 20)
+                                self.timerManager.start()
+                            }
                         }, label: {
                             Image(systemName: "greaterthan")
                                 .resizable()
@@ -157,37 +168,36 @@ struct WorkingOutSessionView: View {
         .offset(y: 35)
         .edgesIgnoringSafeArea(.all)
         .onChange(of: currentItem) { currentItem in
-            print("Going to:",currentItem)
             self.customPlayer.pause()
             self.customPlayer = AVPlayer(url: URL(fileURLWithPath: Bundle.main.path(forResource: videoNames[currentItem], ofType: "mov")!))
             self.customPlayer.play()
-            //self.customPlayer.isMuted = true
-    }
-    }
-
-struct WorkingOutSessionView_Previews: PreviewProvider {
-    static var previews: some View {
-        WorkingOutSessionView(exercisesNames:["LUNGES","SQUATS","BYCICLE CRUNCHES","LEG RAISES"],videoNames:["lunges","squats","bycicleCrunches","legRaises"])
-            .environmentObject(WorkoutViewModel())
-            .environmentObject(ExerciseViewModel())
-    }
-}
-
-struct CustomVP : UIViewControllerRepresentable {
-    
-    var player: AVPlayer
-    
-    func makeUIViewController(context: UIViewControllerRepresentableContext<CustomVP>) -> AVPlayerViewController {
-          
-        let controller = AVPlayerViewController()
-        controller.player = player
-        controller.showsPlaybackControls = false
-        return controller
+            self.customPlayer.isMuted = true
+        }
     }
     
-    func updateUIViewController(_ uiViewController: AVPlayerViewController, context: UIViewControllerRepresentableContext<CustomVP>) {
-        uiViewController.player = player
+    struct WorkingOutSessionView_Previews: PreviewProvider {
+        static var previews: some View {
+            WorkingOutSessionView(exercisesNames:["LUNGES","SQUATS","BYCICLE CRUNCHES","LEG RAISES"],videoNames:["lunges","squats","bycicleCrunches","legRaises"])
+                .environmentObject(WorkoutViewModel())
+                .environmentObject(ExerciseViewModel())
+        }
     }
-}
-
+    
+    struct CustomVP : UIViewControllerRepresentable {
+        
+        var player: AVPlayer
+        
+        func makeUIViewController(context: UIViewControllerRepresentableContext<CustomVP>) -> AVPlayerViewController {
+            
+            let controller = AVPlayerViewController()
+            controller.player = player
+            controller.showsPlaybackControls = false
+            return controller
+        }
+        
+        func updateUIViewController(_ uiViewController: AVPlayerViewController, context: UIViewControllerRepresentableContext<CustomVP>) {
+            uiViewController.player = player
+        }
+    }
+    
 }
