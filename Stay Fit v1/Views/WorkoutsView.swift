@@ -7,7 +7,7 @@ struct WorkoutsView: View {
     
     @State var currentTab = 0
     
-   var body: some View {
+    var body: some View {
         ZStack {
             Image("background")
                 .edgesIgnoringSafeArea(.all)
@@ -18,57 +18,85 @@ struct WorkoutsView: View {
                 case 0: // CARDIO TAB
                     ForEach(workoutViewModel.workout) { wo in
                         if wo.type == "cardio" {
-                            NavigationLink(destination: DetailedWorkoutView(workoutName: wo.name, exercisesNames: wo.exercisesNames, exercisesLogos: wo.exercisesLogos, videoNames: wo.videoNames), label: {
-                                Text(wo.name)
-                                    .font(.title2)
-                                    .fontWeight(.bold)
-                                    .foregroundColor(.white)
-                                    .frame(width: 360, height: 100, alignment: .center)
-                                    .background(Color(red: 243/255, green: 189/255, blue: 126/255))
-                                    .cornerRadius(8)
-                            }).padding(1)
+                            NavigationLink(destination: DetailedWorkoutView(workoutName: wo.name, exercisesNames: wo.exercisesNames, exercisesLogos: wo.exercisesLogos, videoNames: wo.videoNames),
+                                           label: {
+                                            ZStack{
+                                                RoundedRectangle(cornerRadius: 10, style: .continuous)
+                                                    .frame(width: 370, height: 100)
+                                                    .foregroundColor(Color.black.opacity(0.4))
+                                                    .overlay(RoundedRectangle(cornerRadius: 10, style: .continuous).stroke(Color.black, lineWidth: 2.0))
+                                                
+                                                Text(wo.name)
+                                                    .font(.title2)
+                                                    .fontWeight(.bold)
+                                                    .foregroundColor(.white)
+                                                    .frame(width: 340, height: 100, alignment: .center)
+                                                    .lineLimit(2)
+                                            }
+                                           }).padding(1)
                         }
                     }
                 case 1: // ABS TAB
                     ForEach(workoutViewModel.workout) { wo in
                         if wo.type == "abs" {
-                            NavigationLink(destination: DetailedWorkoutView(workoutName: wo.name, exercisesNames: wo.exercisesNames, exercisesLogos: wo.exercisesLogos, videoNames: wo.videoNames), label: {
-                                Text(wo.name)
-                                    .font(.title2)
-                                    .fontWeight(.bold)
-                                    .foregroundColor(.white)
-                                    .frame(width: 360, height: 100, alignment: .center)
-                                    .background(Color(red: 243/255, green: 189/255, blue: 126/255))
-                                    .cornerRadius(8)
-                            }).padding(1)
+                            NavigationLink(destination: DetailedWorkoutView(workoutName: wo.name, exercisesNames: wo.exercisesNames, exercisesLogos: wo.exercisesLogos, videoNames: wo.videoNames),
+                                           label: {
+                                            ZStack{
+                                                RoundedRectangle(cornerRadius: 10, style: .continuous)
+                                                    .frame(width: 370, height: 100)
+                                                    .foregroundColor(Color.black.opacity(0.4))
+                                                    .overlay(RoundedRectangle(cornerRadius: 10, style: .continuous).stroke(Color.black, lineWidth: 2.0))
+                                                
+                                                Text(wo.name)
+                                                    .font(.title2)
+                                                    .fontWeight(.bold)
+                                                    .foregroundColor(.white)
+                                                    .frame(width: 340, height: 100, alignment: .center)
+                                                    .lineLimit(2)
+                                            }
+                                           }).padding(1)
                         }
                     }
                 case 2: // LEGS TAB
                     ForEach(workoutViewModel.workout) { wo in
                         if wo.type == "legs" {
-                            NavigationLink(destination: DetailedWorkoutView(workoutName: wo.name, exercisesNames: wo.exercisesNames, exercisesLogos: wo.exercisesLogos, videoNames: wo.videoNames), label: {
-                                Text(wo.name)
-                                    .font(.title2)
-                                    .fontWeight(.bold)
-                                    .foregroundColor(.white)
-                                    .frame(width: 360, height: 100, alignment: .center)
-                                    .background(Color(red: 243/255, green: 189/255, blue: 126/255))
-                                    .cornerRadius(8)
-                            }).padding(1)
+                            NavigationLink(destination: DetailedWorkoutView(workoutName: wo.name, exercisesNames: wo.exercisesNames, exercisesLogos: wo.exercisesLogos, videoNames: wo.videoNames),
+                                           label: {
+                                            ZStack{
+                                                RoundedRectangle(cornerRadius: 10, style: .continuous)
+                                                    .frame(width: 370, height: 100)
+                                                    .foregroundColor(Color.black.opacity(0.4))
+                                                    .overlay(RoundedRectangle(cornerRadius: 10, style: .continuous).stroke(Color.black, lineWidth: 2.0))
+                                                
+                                                Text(wo.name)
+                                                    .font(.title2)
+                                                    .fontWeight(.bold)
+                                                    .foregroundColor(.white)
+                                                    .frame(width: 340, height: 100, alignment: .center)
+                                                    .lineLimit(2)
+                                            }
+                                           }).padding(1)
                         }
                     }
                 case 3: // ARMS TAB
                     ForEach(workoutViewModel.workout) { wo in
                         if wo.type == "arms" {
-                            NavigationLink(destination: DetailedWorkoutView(workoutName: wo.name, exercisesNames: wo.exercisesNames, exercisesLogos: wo.exercisesLogos, videoNames: wo.videoNames), label: {
-                                Text(wo.name)
-                                    .font(.title2)
-                                    .fontWeight(.bold)
-                                    .foregroundColor(.white)
-                                    .frame(width: 360, height: 100, alignment: .center)
-                                    .background(Color(red: 243/255, green: 189/255, blue: 126/255))
-                                    .cornerRadius(8)
-                            }).padding(1)
+                            NavigationLink(destination: DetailedWorkoutView(workoutName: wo.name, exercisesNames: wo.exercisesNames, exercisesLogos: wo.exercisesLogos, videoNames: wo.videoNames),
+                                           label: {
+                                            ZStack{
+                                                RoundedRectangle(cornerRadius: 10, style: .continuous)
+                                                    .frame(width: 370, height: 100)
+                                                    .foregroundColor(Color.black.opacity(0.4))
+                                                    .overlay(RoundedRectangle(cornerRadius: 10, style: .continuous).stroke(Color.black, lineWidth: 2.0))
+                                                
+                                                Text(wo.name)
+                                                    .font(.title2)
+                                                    .fontWeight(.bold)
+                                                    .foregroundColor(.white)
+                                                    .frame(width: 340, height: 100, alignment: .center)
+                                                    .lineLimit(2)
+                                            }
+                                           }).padding(1)
                         }
                     }
                 default:
