@@ -3,11 +3,12 @@ import AVKit
 
 struct WorkingOutSessionView: View {
     
+    @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var exerciseViewModel: ExerciseViewModel
     @EnvironmentObject var workoutViewModel: WorkoutViewModel
     @ObservedObject var timerManager = TimerManager()
     
-    var exerciseTime = 20 // for LEVEL
+    var exerciseTime = 5 // change here for LEVEL
     
     let exercisesNames: [String]
     let videoNames: [String]
@@ -38,6 +39,8 @@ struct WorkingOutSessionView: View {
                         .foregroundColor((Color(red: 161/255, green: 99/255, blue: 68/255)))
                         .padding(1)
                         .frame(width: 390, alignment: .center)
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.5)
                     
                     // COUNTDOWN TIMER
                     ZStack {
@@ -50,7 +53,6 @@ struct WorkingOutSessionView: View {
                                 .font(.system(size: 150))
                                 .foregroundColor((Color(red: 161/255, green: 99/255, blue: 68/255)))
                                 .padding(.vertical, 60)
-                            
                         }
                         else {
                             Text("\(timerManager.secondsLeft)")
@@ -67,7 +69,6 @@ struct WorkingOutSessionView: View {
                             if currentItem != 0 {
                                 currentItem = min(currentItem, currentItem - 1)
                                 self.timerManager.reset()
-                                self.timerManager.setTimerLength(seconds: 20)
                                 self.timerManager.start()
                             }
                         }, label: {
@@ -83,7 +84,7 @@ struct WorkingOutSessionView: View {
                         Button(action: {
                             if timerManager.timerMode != .finished {
                                 if self.timerManager.timerMode == .initial {
-                                    self.timerManager.setTimerLength(seconds: 20) // Initializing SecondsLeft !!!!!!!!!!!!
+                                    self.timerManager.setTimerLength(seconds: exerciseTime)
                                 }
                                 self.timerManager.timerMode == .running ? self.timerManager.pause() : self.timerManager.start()
                             }
@@ -106,17 +107,15 @@ struct WorkingOutSessionView: View {
                                 .foregroundColor((Color(red: 243/255, green: 189/255, blue: 126/255)))
                                 .padding(.top, 3)
                         })
-                        .onChange(of: timerManager.finish, perform: { value in
-                            if timerManager.finish && currentItem < videoNames.count-1 {
-                                print(currentItem)
+                        .onChange(of: timerManager.countdownFinished, perform: { value in
+                            if timerManager.countdownFinished && currentItem < videoNames.count-1 {
                                 currentItem = min(videoNames.count - 1, currentItem + 1)
                                 self.timerManager.reset()
-                                self.timerManager.setTimerLength(seconds: 20)
                                 self.timerManager.start()
-                                self.timerManager.finish = false
+                                self.timerManager.countdownFinished = false
                             }
                         })
-                        .onReceive(timerManager.$finish, perform: { _ in
+                        .onReceive(timerManager.$countdownFinished, perform: { _ in
                             if currentItem == videoNames.count-1 {
                                 self.customPlayer.pause()
                                 self.isplaying = false
@@ -126,10 +125,8 @@ struct WorkingOutSessionView: View {
                         // FORWARD BUTTON
                         Button(action: {
                             if currentItem < videoNames.count-1 {
-                                print(currentItem)
                                 currentItem = min(videoNames.count - 1, currentItem + 1)
                                 self.timerManager.reset()
-                                self.timerManager.setTimerLength(seconds: 20)
                                 self.timerManager.start()
                             }
                         }, label: {
@@ -145,8 +142,8 @@ struct WorkingOutSessionView: View {
                     // RESTART BUTTON
                     Button(action: {
                         self.timerManager.reset()
-                        self.customPlayer.pause()
                         self.isplaying = false
+                        self.customPlayer.pause()
                         self.customPlayer.seek(to: .zero)
                     }, label: {
                         HStack(spacing: 15) {
@@ -161,6 +158,11 @@ struct WorkingOutSessionView: View {
                         .padding(.top, 15)
                     })
                     
+//                    Button(action: {
+//                        self.presentationMode.wrappedValue.dismiss()
+//                    }, label: {
+//                        Text("Dismiss")
+//                    })
                     Spacer()
                 }.offset(y: 30)
             }

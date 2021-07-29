@@ -4,7 +4,7 @@ import SwiftUI
 class TimerManager: ObservableObject {
     
     @Published var timerMode: TimerMode = .initial
-    @Published var finish: Bool = false
+    @Published var countdownFinished: Bool = false
     
     @Published var secondsLeft = UserDefaults.standard.integer(forKey: "timerLength")
     
@@ -22,7 +22,7 @@ class TimerManager: ObservableObject {
             if self.secondsLeft == 0 {
                 self.reset()
                 self.timerMode = .finished
-                self.finish = true
+                self.countdownFinished = true
             }
             self.secondsLeft -= 1
         })
