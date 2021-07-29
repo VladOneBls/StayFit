@@ -10,22 +10,35 @@ struct ExercisesView: View {
                 .edgesIgnoringSafeArea(.all)
                 .navigationTitle("Exercises")
             
-            ScrollView {
-                ForEach(exerciseViewModel.exercise) { ex in
-                    NavigationLink(
-                        destination: DetailedExerciseView(exerciseName: ex.name, steps: ex.steps, videoName: ex.videoName),
-                        label: {
-                        Text(ex.name)
-                            .font(.title2)
-                            .fontWeight(.bold)
-                            .foregroundColor(.white)
-                            .frame(width: 360, height: 100, alignment: .center)
-                            .background(Color(red: 243/255, green: 189/255, blue: 126/255))
-                            .cornerRadius(8)
-                    }).padding(1)
+            VStack {
+                Image("background")
+                    .frame(height: 110, alignment: .top)
+                    .edgesIgnoringSafeArea(.all)
+                
+                ScrollView {
+                    ForEach(exerciseViewModel.exercise) { ex in
+                        NavigationLink(
+                            destination: DetailedExerciseView(exerciseName: ex.name, steps: ex.steps, videoName: ex.videoName),
+                            label: {
+                                ZStack{
+                                    RoundedRectangle(cornerRadius: 10, style: .continuous)
+                                        .frame(width: 370, height: 100)
+                                        .foregroundColor(Color.black.opacity(0.4))
+                                        .overlay(RoundedRectangle(cornerRadius: 10, style: .continuous).stroke(Color.black, lineWidth: 2.0))
+                                    
+                                    Text(ex.name)
+                                        .font(.title2)
+                                        .fontWeight(.bold)
+                                        .foregroundColor(.white)
+                                        .frame(width: 340, height: 100, alignment: .center)
+                                        .lineLimit(2)
+                                }
+                            }).padding(1)
+                    }
                 }
-            }.offset(y: 110) // closing ScrollView
-        } // close first ZStack
+                .padding(.bottom, 110)
+            }
+        }
     }
 }
 

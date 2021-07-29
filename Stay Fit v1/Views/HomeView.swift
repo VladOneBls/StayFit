@@ -1,10 +1,3 @@
-//
-//  HomeView.swift
-//  Stay Fit v1
-//
-//  Created by Vlad Balash on 20/07/2021.
-//
-
 import SwiftUI
 
 struct HomeView: View {
@@ -23,14 +16,14 @@ struct HomeView: View {
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 120.0, height: 120.0)
-                    .shadow(radius: 30)
+                    .shadow(radius: 20)
                     .padding(.top, 60)
                 
                 Image("appName")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 300.0, height: 40.0)
-                    .shadow(radius: 30)
+                    .shadow(radius: 5)
                 
                 // QUOTE
                 Text("“Our bodies communicate to us clearly and specifically, if we are willing to listen to them”")
@@ -49,6 +42,7 @@ struct HomeView: View {
                 Spacer()
                 
                 HStack {
+                    // WORKOUTS BUTTON
                     NavigationLink(destination: WorkoutsView(), label: {
                         ZStack {
                             RoundedRectangle(cornerRadius: 10, style: .continuous)
@@ -63,6 +57,7 @@ struct HomeView: View {
                         }
                     })
                     
+                    // EXERCISES BUTTON
                     NavigationLink(destination: ExercisesView(), label: {
                         ZStack {
                             RoundedRectangle(cornerRadius: 10, style: .continuous)
@@ -78,6 +73,7 @@ struct HomeView: View {
                     })
                 }
                 
+                // ACTIVITY BUTTON
                 NavigationLink(destination: ActivityView(), label: {
                     ZStack {
                         RoundedRectangle(cornerRadius: 10, style: .continuous)
