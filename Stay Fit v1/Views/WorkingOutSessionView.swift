@@ -107,18 +107,21 @@ struct WorkingOutSessionView: View {
                                 .foregroundColor((Color(red: 243/255, green: 189/255, blue: 126/255)))
                                 .padding(.top, 3)
                         })
+                        // if counter ran out & item < last item
                         .onChange(of: timerManager.countdownFinished, perform: { value in
                             if timerManager.countdownFinished && currentItem < videoNames.count-1 {
                                 currentItem = min(videoNames.count - 1, currentItem + 1)
+                                self.timerManager.countdownFinished = false
                                 self.timerManager.reset()
                                 self.timerManager.start()
-                                self.timerManager.countdownFinished = false
                             }
-                        })
-                        .onReceive(timerManager.$countdownFinished, perform: { _ in
-                            if currentItem == videoNames.count-1 {
+                            // if workout is finished => restart counter + stop video + dismiss view
+                            if timerManager.countdownFinished && currentItem == videoNames.count-1 {
                                 self.customPlayer.pause()
                                 self.isplaying = false
+                                self.timerManager.countdownFinished = false
+                                self.timerManager.reset()
+                                self.presentationMode.wrappedValue.dismiss()
                             }
                         })
                         
