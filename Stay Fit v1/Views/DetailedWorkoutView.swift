@@ -15,21 +15,25 @@ struct DetailedWorkoutView: View {
     var body: some View {
         ZStack {
             Image("background")
+                .edgesIgnoringSafeArea(.all)
+                .navigationBarTitle(workoutName)
             
             VStack {
-                ZStack {
-                    Rectangle()
-                        .frame(width: 390, height: 150, alignment: .center)
-                        .foregroundColor(.white)
-                    
-                    Text(workoutName)
-                        .font(.title2)
-                        .fontWeight(.bold)
-                        .frame(width: 360, height: 30, alignment: .leading)
-                        .offset(y: 50)
-                }
-                
-                Spacer()
+                // FUTURE WORKOUT PICTURE HERE
+//                ZStack {
+//                    Rectangle()
+//                        .frame(width: 390, height: 150, alignment: .center)
+//                        .foregroundColor(.white)
+//
+//                    Text(workoutName)
+//                        .font(.title2)
+//                        .fontWeight(.bold)
+//                        .frame(width: 360, height: 30, alignment: .leading)
+//                        .offset(y: 50)
+//                }
+                Image("background")
+                    .frame(height: 110, alignment: .top)
+                    .edgesIgnoringSafeArea(.all)
                 
                 ScrollView {
                     ForEach(0..<exercisesNames.count) { index in
@@ -49,7 +53,7 @@ struct DetailedWorkoutView: View {
                         }.padding(.top, 10)
                         .padding(.bottom, -5)
                     }
-                }.offset(y: -5)
+                }
                 
                 Spacer()
                 
