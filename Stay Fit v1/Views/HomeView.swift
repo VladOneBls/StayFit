@@ -15,32 +15,47 @@ struct HomeView: View {
         ZStack {
             Image("background")
                 .edgesIgnoringSafeArea(.all)
-                .navigationTitle("")
+                .navigationTitle("Home")
+                .navigationBarHidden(true)
             
             VStack {
+                Image("appLogo")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 120.0, height: 120.0)
+                    .shadow(radius: 30)
+                    .padding(.top, 60)
+                
+                Image("appName")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 300.0, height: 40.0)
+                    .shadow(radius: 30)
+                
                 // QUOTE
-                Text("Our bodies communicate to us clearly and specifically, if we are willing to listen to them")
+                Text("“Our bodies communicate to us clearly and specifically, if we are willing to listen to them”")
                     .foregroundColor(.black)
-                    .font(.title2)
-                    .padding(.horizontal, 30)
+                    .font(.title2).italic()
+                    .frame(width: 370, alignment: .center)
                     .padding(.top, 40)
                 
                 // AUTHOR
                 Text("- Shakti Gawain")
                     .foregroundColor(.black)
-                    .font(.title2).bold()
+                    .font(.title3).bold()
                     .padding()
-                    .padding(.leading, 200)
+                    .padding(.leading, 150)
                 
                 Spacer()
                 
                 HStack {
                     NavigationLink(destination: WorkoutsView(), label: {
                         ZStack {
-                            Rectangle()
-                                .foregroundColor(.black)
-                                .frame(width: 170, height: 170, alignment: .center)
-                                .cornerRadius(10)
+                            RoundedRectangle(cornerRadius: 10, style: .continuous)
+                                .foregroundColor(Color.black.opacity(0.5))
+                                .frame(width: 170, height: 120)
+                                .overlay(RoundedRectangle(cornerRadius: 10, style: .continuous).stroke(Color.black, lineWidth: 3.0))
+                                .padding(.trailing, 5)
                             Text("Workouts")
                                 .foregroundColor(.white)
                                 .font(.title2)
@@ -50,10 +65,11 @@ struct HomeView: View {
                     
                     NavigationLink(destination: ExercisesView(), label: {
                         ZStack {
-                            Rectangle()
-                                .foregroundColor(.black)
-                                .frame(width: 170, height: 170, alignment: .center)
-                                .cornerRadius(10)
+                            RoundedRectangle(cornerRadius: 10, style: .continuous)
+                                .foregroundColor(Color.black.opacity(0.5))
+                                .frame(width: 170, height: 120)
+                                .overlay(RoundedRectangle(cornerRadius: 10, style: .continuous).stroke(Color.black, lineWidth: 3.0))
+                                .padding(.leading, 5)
                             Text("Exercises")
                                 .foregroundColor(.white)
                                 .font(.title2)
@@ -62,21 +78,33 @@ struct HomeView: View {
                     })
                 }
                 
+                NavigationLink(destination: ActivityView(), label: {
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 10, style: .continuous)
+                            .foregroundColor(Color.black.opacity(0.8))
+                            .frame(width: 360, height: 50)
+                            .overlay(RoundedRectangle(cornerRadius: 10, style: .continuous).stroke(Color.black, lineWidth: 3.0))
+                            
+                        Text("Activity")
+                            .foregroundColor(.white)
+                            .font(.title2)
+                            .fontWeight(.bold)
+                    }
+                    .padding(.top, 10)
+                })
+                
                 // SIGN OUT BUTTON
                 Button {
                     viewModel.signOut()
                 } label: {
                     Text("Sign Out")
-                        .font(.title3)
-                        .fontWeight(.bold)
+                        .font(.callout)
                         .foregroundColor(.white)
-                        .frame(width: 100, height: 35, alignment: .center)
-                        .background(Color(red: 243/255, green: 189/255, blue: 126/255))
-                        .cornerRadius(5)
-                        .padding(.top, 30)
-                }
+                        .underline()
+                        .padding(.top, 10)
+                }.padding(.bottom, 50)
                 
-                Spacer()
+                
             }
         }.onAppear {
             UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.init(Color(red: 161/255, green: 99/255, blue: 68/255))]

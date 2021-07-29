@@ -23,7 +23,7 @@ struct DetailedExerciseView: View {
                         .cornerRadius(10)
                         .onDisappear(){
                             player.pause()
-                            player.seek(to: .zero) //self.player.currentItem?.duration.seconds
+                            player.seek(to: .zero)
                         }
                 }
                 

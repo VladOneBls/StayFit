@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E299F1F26B32EFA00193D6D /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E299F1E26B32EFA00193D6D /* Buttons.swift */; };
 		0E2EB3A226ADC54700B39127 /* squats.mov in Resources */ = {isa = PBXBuildFile; fileRef = 0E2EB3A126ADC54700B39127 /* squats.mov */; };
 		0E2EB3A726ADC94E00B39127 /* alternatingHooks.mov in Resources */ = {isa = PBXBuildFile; fileRef = 0E2EB3A326ADC94E00B39127 /* alternatingHooks.mov */; };
 		0E2EB3A826ADC94E00B39127 /* abdominalCrunches.mov in Resources */ = {isa = PBXBuildFile; fileRef = 0E2EB3A426ADC94E00B39127 /* abdominalCrunches.mov */; };
@@ -72,6 +73,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E299F1E26B32EFA00193D6D /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 		0E2EB3A126ADC54700B39127 /* squats.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = squats.mov; sourceTree = "<group>"; };
 		0E2EB3A326ADC94E00B39127 /* alternatingHooks.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = alternatingHooks.mov; sourceTree = "<group>"; };
 		0E2EB3A426ADC94E00B39127 /* abdominalCrunches.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = abdominalCrunches.mov; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 				0E312B0B26A6F7E000E38A06 /* DetailedExerciseView.swift */,
 				0E312B1126A6FA0F00E38A06 /* ExercisingSessionView.swift */,
 				0E312B0D26A6F81100E38A06 /* ActivityView.swift */,
+				0E299F1E26B32EFA00193D6D /* Buttons.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -460,6 +463,7 @@
 				0EA9DBCD26A8568F00BED99A /* ExerciseViewModel.swift in Sources */,
 				0E2EB3FA26AF5EED00B39127 /* WorkoutModel.swift in Sources */,
 				0E312B0C26A6F7E000E38A06 /* DetailedExerciseView.swift in Sources */,
+				0E299F1F26B32EFA00193D6D /* Buttons.swift in Sources */,
 				0E312B0626A6F69F00E38A06 /* DetailedWorkoutView.swift in Sources */,
 				0E2EB3F826AF5EB700B39127 /* WorkoutViewModel.swift in Sources */,
 				0E84B42826A5F8EC00EF9B51 /* TimerManager.swift in Sources */,

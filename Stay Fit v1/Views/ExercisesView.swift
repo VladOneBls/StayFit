@@ -8,7 +8,7 @@ struct ExercisesView: View {
         ZStack {
             Image("background")
                 .edgesIgnoringSafeArea(.all)
-                //.navigationTitle("Exercises")
+                .navigationTitle("Exercises")
             
             ScrollView {
                 ForEach(exerciseViewModel.exercise) { ex in
