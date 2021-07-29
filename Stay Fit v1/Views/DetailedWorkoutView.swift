@@ -10,7 +10,7 @@ struct DetailedWorkoutView: View {
     let exercisesLogos: [String]
     let videoNames: [String]
     
-    @State var currentTab = 1
+    @State var currentTab = 20
     
     var body: some View {
         ZStack {
@@ -20,17 +20,18 @@ struct DetailedWorkoutView: View {
             
             VStack {
                 // FUTURE WORKOUT PICTURE HERE
-//                ZStack {
-//                    Rectangle()
-//                        .frame(width: 390, height: 150, alignment: .center)
-//                        .foregroundColor(.white)
-//
-//                    Text(workoutName)
-//                        .font(.title2)
-//                        .fontWeight(.bold)
-//                        .frame(width: 360, height: 30, alignment: .leading)
-//                        .offset(y: 50)
-//                }
+                /* ZStack {
+                    Rectangle()
+                        .frame(width: 390, height: 150, alignment: .center)
+                        .foregroundColor(.white)
+
+                    Text(workoutName)
+                        .font(.title2)
+                        .fontWeight(.bold)
+                        .frame(width: 360, height: 30, alignment: .leading)
+                        .offset(y: 50)
+                } */
+                
                 Image("background")
                     .frame(height: 110, alignment: .top)
                     .edgesIgnoringSafeArea(.all)
@@ -60,15 +61,15 @@ struct DetailedWorkoutView: View {
                 VStack {
                     // CATEGORY PICKER
                     Picker(selection: $currentTab, label: Text("")) {
-                        Text("Beginner").tag(1)
-                        Text("Intermediate").tag(2)
-                        Text("Advanced").tag(3)
+                        Text("Beginner").tag(20)
+                        Text("Intermediate").tag(40)
+                        Text("Advanced").tag(60)
                     }.pickerStyle(SegmentedPickerStyle())
                     .padding(.horizontal, 20)
                     
                     // START BUTTON
                     NavigationLink(
-                        destination: WorkingOutSessionView(exercisesNames: exercisesNames, videoNames: videoNames),
+                        destination: WorkingOutSessionView(exerciseTime: currentTab, exercisesNames: exercisesNames, videoNames: videoNames),
                         label: {
                             Text("START")
                                 .font(.title3)

@@ -8,7 +8,7 @@ struct WorkingOutSessionView: View {
     @EnvironmentObject var workoutViewModel: WorkoutViewModel
     @ObservedObject var timerManager = TimerManager()
     
-    var exerciseTime = 5 // change here for LEVEL
+    let exerciseTime: Int // change here for LEVEL
     
     let exercisesNames: [String]
     let videoNames: [String]
@@ -18,7 +18,8 @@ struct WorkingOutSessionView: View {
     @State private var isplaying = false
     @State private var showcontrols = false
     
-    init(exercisesNames: [String], videoNames: [String]) {
+    init(exerciseTime: Int, exercisesNames: [String], videoNames: [String]) {
+        self.exerciseTime = exerciseTime
         self.exercisesNames = exercisesNames
         self.videoNames = videoNames
         self._customPlayer = State(initialValue: AVPlayer(url: URL(fileURLWithPath: Bundle.main.path(forResource: videoNames[0], ofType: "mov")!)))
@@ -60,7 +61,9 @@ struct WorkingOutSessionView: View {
                                 .foregroundColor((Color(red: 161/255, green: 99/255, blue: 68/255)))
                                 .padding(.vertical, 60)
                         }
-                    }
+                    }.onAppear(perform: {
+                        timerManager.setTimerLength(seconds: exerciseTime)
+                    })
                     
                     HStack {
                         
@@ -182,7 +185,7 @@ struct WorkingOutSessionView: View {
     
     struct WorkingOutSessionView_Previews: PreviewProvider {
         static var previews: some View {
-            WorkingOutSessionView(exercisesNames:["LUNGES","SQUATS","BYCICLE CRUNCHES","LEG RAISES"],videoNames:["lunges","squats","bycicleCrunches","legRaises"])
+            WorkingOutSessionView(exerciseTime: 20, exercisesNames:["LUNGES","SQUATS","BYCICLE CRUNCHES","LEG RAISES"],videoNames:["lunges","squats","bycicleCrunches","legRaises"])
                 .environmentObject(WorkoutViewModel())
                 .environmentObject(ExerciseViewModel())
         }
