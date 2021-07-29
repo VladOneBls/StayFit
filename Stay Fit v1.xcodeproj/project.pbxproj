@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E299F2126B3602500193D6D /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E299F2026B3602500193D6D /* SignInView.swift */; };
+		0E299F2326B360CA00193D6D /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E299F2226B360CA00193D6D /* SignUpView.swift */; };
 		0E2EB3A226ADC54700B39127 /* squats.mov in Resources */ = {isa = PBXBuildFile; fileRef = 0E2EB3A126ADC54700B39127 /* squats.mov */; };
 		0E2EB3A726ADC94E00B39127 /* alternatingHooks.mov in Resources */ = {isa = PBXBuildFile; fileRef = 0E2EB3A326ADC94E00B39127 /* alternatingHooks.mov */; };
 		0E2EB3A826ADC94E00B39127 /* abdominalCrunches.mov in Resources */ = {isa = PBXBuildFile; fileRef = 0E2EB3A426ADC94E00B39127 /* abdominalCrunches.mov */; };
@@ -72,6 +74,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E299F2026B3602500193D6D /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		0E299F2226B360CA00193D6D /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		0E2EB3A126ADC54700B39127 /* squats.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = squats.mov; sourceTree = "<group>"; };
 		0E2EB3A326ADC94E00B39127 /* alternatingHooks.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = alternatingHooks.mov; sourceTree = "<group>"; };
 		0E2EB3A426ADC94E00B39127 /* abdominalCrunches.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = abdominalCrunches.mov; sourceTree = "<group>"; };
@@ -202,6 +206,8 @@
 		0E312B0426A6F67B00E38A06 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0E299F2026B3602500193D6D /* SignInView.swift */,
+				0E299F2226B360CA00193D6D /* SignUpView.swift */,
 				0E312B0F26A6F94B00E38A06 /* HomeView.swift */,
 				0E84B43126A6F44400EF9B51 /* WorkoutsView.swift */,
 				0E312B0526A6F69F00E38A06 /* DetailedWorkoutView.swift */,
@@ -451,10 +457,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E299F2126B3602500193D6D /* SignInView.swift in Sources */,
 				0E312B0E26A6F81100E38A06 /* ActivityView.swift in Sources */,
 				0E312B0A26A6F79500E38A06 /* ExercisesView.swift in Sources */,
 				0E3568A22614EADE00BEB5A5 /* AppDelegate.swift in Sources */,
 				0E3568A42614EADE00BEB5A5 /* SceneDelegate.swift in Sources */,
+				0E299F2326B360CA00193D6D /* SignUpView.swift in Sources */,
 				0E312B1226A6FA0F00E38A06 /* ExercisingSessionView.swift in Sources */,
 				0E3568A62614EADE00BEB5A5 /* ContentView.swift in Sources */,
 				0EA9DBCD26A8568F00BED99A /* ExerciseViewModel.swift in Sources */,
