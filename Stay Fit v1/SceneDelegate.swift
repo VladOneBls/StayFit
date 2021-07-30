@@ -23,6 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         let exerciseViewModel = ExerciseViewModel()
         let workoutViewModel = WorkoutViewModel()
+        let quoteViewModel = QuoteViewModel()
         let viewModel = AppViewModel()
         
         // Create the SwiftUI view that provides the window contents.
@@ -30,6 +31,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             .environmentObject(viewModel)
             .environmentObject(exerciseViewModel)
             .environmentObject(workoutViewModel)
+            .environmentObject(quoteViewModel)
 
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {

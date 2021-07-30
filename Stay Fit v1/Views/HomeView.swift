@@ -2,6 +2,7 @@ import SwiftUI
 
 struct HomeView: View {
     
+    @EnvironmentObject var quoteViewModel: QuoteViewModel
     @EnvironmentObject var viewModel: AppViewModel
     
     var body: some View {
@@ -25,19 +26,24 @@ struct HomeView: View {
                     .frame(width: 300.0, height: 40.0)
                     .shadow(radius: 5)
                 
-                // QUOTE
-                Text("“Our bodies communicate to us clearly and specifically, if we are willing to listen to them”")
-                    .foregroundColor(.black)
-                    .font(.title2).italic()
-                    .frame(width: 370, alignment: .center)
-                    .padding(.top, 40)
+                ForEach(quoteViewModel.quote) { qo in
+                    if qo.number == 1 { // specific day = qu.number (monday = 1)
+                        // QUOTE
+                        Text(qo.quote)
+                            .foregroundColor(.black)
+                            .font(.title2).italic()
+                            .frame(width: 370, alignment: .center)
+                            .padding(.top, 40)
+                        
+                        // AUTHOR
+                        Text(qo.author)
+                            .foregroundColor(.black)
+                            .font(.title3).bold()
+                            .padding()
+                            .padding(.leading, 150)
+                    }
+                }
                 
-                // AUTHOR
-                Text("- Shakti Gawain")
-                    .foregroundColor(.black)
-                    .font(.title3).bold()
-                    .padding()
-                    .padding(.leading, 150)
                 
                 Spacer()
                 
@@ -110,6 +116,6 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        HomeView().environmentObject(QuoteViewModel())
     }
 }
