@@ -111,10 +111,11 @@ struct SignInView: View {
                             .cornerRadius(5)
                     }.offset(y: 15)
                 }
+                
                 // FORGOT YOUR PASSWORD BUTTON
                 Button(action: {
                     
-                    //TODO
+                    // TO BE IMPLEMENTED
                     
                 }, label: {
                     Text("Forgot your password?")

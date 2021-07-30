@@ -5,12 +5,17 @@ struct HomeView: View {
     @EnvironmentObject var quoteViewModel: QuoteViewModel
     @EnvironmentObject var viewModel: AppViewModel
     
+    @State var weekday: String = "Sunday"
+    
     var body: some View {
         ZStack {
             Image("background")
                 .edgesIgnoringSafeArea(.all)
                 .navigationTitle("Home")
                 .navigationBarHidden(true)
+                .onAppear(perform: {
+                    self.weekday = (Date().dayOfWeek()!)
+                })
             
             VStack {
                 Image("appLogo")
@@ -27,23 +32,23 @@ struct HomeView: View {
                     .shadow(radius: 5)
                 
                 ForEach(quoteViewModel.quote) { qo in
-                    if qo.day == "monday" { // change for specific day
+                    if qo.day == weekday {
                         // QUOTE
                         Text(qo.quote)
                             .foregroundColor(.black)
                             .font(.title2).italic()
-                            .frame(width: 370, alignment: .center)
-                            .padding(.top, 40)
+                            .frame(width: UIScreen.main.bounds.width - 60, alignment: .center)
+                            .multilineTextAlignment(.center)
+                            .padding(.top, 70)
                         
                         // AUTHOR
                         Text(qo.author)
                             .foregroundColor(.black)
                             .font(.title3).bold()
+                            .frame(width: UIScreen.main.bounds.width, alignment: .center)
                             .padding()
-                            .padding(.leading, 150)
                     }
                 }
-                
                 
                 Spacer()
                 
@@ -111,6 +116,14 @@ struct HomeView: View {
         }.onAppear {
             UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.init(Color(red: 161/255, green: 99/255, blue: 68/255))]
         }
+    }
+}
+
+extension Date {
+    func dayOfWeek() -> String? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEEE"
+        return dateFormatter.string(from: self).capitalized
     }
 }
 

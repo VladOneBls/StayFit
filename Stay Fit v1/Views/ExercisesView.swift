@@ -15,7 +15,7 @@ struct ExercisesView: View {
                     .frame(height: 110, alignment: .top)
                     .edgesIgnoringSafeArea(.all)
                 
-                ScrollView {
+                ScrollView(showsIndicators: false) {
                     ForEach(exerciseViewModel.exercise) { ex in
                         NavigationLink(
                             destination: DetailedExerciseView(exerciseName: ex.name, steps: ex.steps, videoName: ex.videoName),
@@ -31,6 +31,7 @@ struct ExercisesView: View {
                                         .fontWeight(.bold)
                                         .foregroundColor(.white)
                                         .frame(width: 340, height: 100, alignment: .center)
+                                        .multilineTextAlignment(.center)
                                         .lineLimit(2)
                                 }
                             }).padding(1)
