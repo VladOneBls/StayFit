@@ -10,10 +10,10 @@ class QuoteViewModel: ObservableObject {
     
     func getQuote() {
         let newQuote = [
-            QuoteModel(number: 1,
+            QuoteModel(day: "monday",
                        quote: "“Our bodies communicate to us clearly and specifically, if we are willing to listen to them.”",
                        author: "- Shakti Gawain"),
-            QuoteModel(number: 2,
+            QuoteModel(day: "tuesday",
                        quote: "“The only person you are destined to become is the person you decide to be.”",
                        author: "- Ralph Waldo Emerson")
         ]

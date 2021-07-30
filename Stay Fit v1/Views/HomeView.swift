@@ -27,7 +27,7 @@ struct HomeView: View {
                     .shadow(radius: 5)
                 
                 ForEach(quoteViewModel.quote) { qo in
-                    if qo.number == 1 { // specific day = qu.number (monday = 1)
+                    if qo.day == "monday" { // change for specific day
                         // QUOTE
                         Text(qo.quote)
                             .foregroundColor(.black)
