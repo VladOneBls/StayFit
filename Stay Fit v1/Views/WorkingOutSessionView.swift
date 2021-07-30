@@ -8,7 +8,7 @@ struct WorkingOutSessionView: View {
     @EnvironmentObject var workoutViewModel: WorkoutViewModel
     @ObservedObject var timerManager = TimerManager()
     
-    let exerciseTime: Int // change here for LEVEL
+    let exerciseTime: Int
     
     let exercisesNames: [String]
     let videoNames: [String]
@@ -32,6 +32,12 @@ struct WorkingOutSessionView: View {
                 .onTapGesture {
                     self.showcontrols = true
                 }
+                .onAppear(perform: {
+                    self.customPlayer.seek(to: CMTime(seconds: .zero + 2, preferredTimescale: 1)) // !!!
+                })
+                .onChange(of: customPlayer, perform: { value in
+                    self.customPlayer.seek(to: CMTime(seconds: .zero + 2, preferredTimescale: 1))
+                })
             
             GeometryReader {_ in
                 VStack {
@@ -150,7 +156,7 @@ struct WorkingOutSessionView: View {
                         self.timerManager.reset()
                         self.isplaying = false
                         self.customPlayer.pause()
-                        self.customPlayer.seek(to: .zero)
+                        self.customPlayer.seek(to: CMTime(seconds: .zero + 2, preferredTimescale: 1))
                     }, label: {
                         HStack(spacing: 15) {
                             Image(systemName: "arrow.clockwise")
@@ -164,11 +170,6 @@ struct WorkingOutSessionView: View {
                         .padding(.top, 15)
                     })
                     
-//                    Button(action: {
-//                        self.presentationMode.wrappedValue.dismiss()
-//                    }, label: {
-//                        Text("Dismiss")
-//                    })
                     Spacer()
                 }.offset(y: 30)
             }
