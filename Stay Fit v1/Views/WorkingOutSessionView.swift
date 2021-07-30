@@ -136,13 +136,13 @@ struct WorkingOutSessionView: View {
                             }
                             
                             if self.isplaying {
-                                self.audioPlayer.pause() // !!!
+                                self.audioPlayer.pause()
                                 self.customPlayer.pause()
                                 self.customPlayer.isMuted = true
                                 self.isplaying = false
                             }
                             else {
-                                self.audioPlayer.play() // !!!
+                                self.audioPlayer.play()
                                 self.customPlayer.play()
                                 customPlayer.isMuted = true
                                 self.isplaying = true

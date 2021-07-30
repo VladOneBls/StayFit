@@ -3,29 +3,57 @@ import AVKit
 
 struct ExercisingSessionView: View {
     
+    @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var exerciseViewModel: ExerciseViewModel
     @ObservedObject var timerManager = TimerManager()
     
     let exerciseName: String
     let videoName: String
     
-    @State var player : AVPlayer
-    @State var isplaying = false
-    @State var showcontrols = false
+    @State private var audioPlayer: AVAudioPlayer
+    @State private var player : AVPlayer
+    @State private var isplaying = false
+    @State private var showcontrols = false
     
     init(exerciseName: String, videoName: String) {
         self.exerciseName = exerciseName
         self.videoName = videoName
         self._player = State(initialValue: AVPlayer(url: URL(fileURLWithPath: Bundle.main.path(forResource: videoName, ofType: "mov")!)))
+        self._audioPlayer = State(initialValue: try! AVAudioPlayer(contentsOf: URL(fileURLWithPath: Bundle.main.path(forResource: "audio", ofType: "mp3")!)))
     }
     
     var body: some View {
         VStack {
-            CustomVideoPlayer(player: $player)
-                .frame(width: 390, height: 219)
-                .onTapGesture {
-                    self.showcontrols = true
-                }
+            ZStack {
+                CustomVideoPlayer(player: $player)
+                    .frame(width: 390, height: 219)
+                    .onTapGesture {
+                        self.showcontrols = true
+                    }
+                    .onAppear(perform: {
+                        self.player.seek(to: CMTime(seconds: .zero + 2, preferredTimescale: 1))
+                    })
+                    .navigationBarHidden(true)
+                
+                // NAVIGATION BAR BACK BUTTON
+                Button(action: {
+                    self.audioPlayer.pause()
+                    self.audioPlayer.currentTime = 0
+                    self.player.pause()
+                    self.timerManager.countdownFinished = false
+                    self.timerManager.reset()
+                    self.presentationMode.wrappedValue.dismiss()
+                }, label: {
+                    HStack (spacing: 4) {
+                        Image(systemName: "chevron.backward")
+                            .font(.title2)
+                        Text("Back")
+                    }.foregroundColor(.black)
+                    .padding(.leading, 8)
+                    .padding(.bottom, 151)
+                    Spacer()
+                })
+            }
             
             GeometryReader {_ in
                 VStack {
@@ -56,12 +84,13 @@ struct ExercisingSessionView: View {
                         }
                     }
                     .onReceive(timerManager.$secondsLeft, perform: { _ in
-                        // video stops and timer restarts when secondsLeft = 0
+                        // video stops and timer restarts when secondsLeft = 0  !!!!!!!!!!!!!!!!
                         if timerManager.secondsLeft == 1 {
                             self.timerManager.reset()
                             self.isplaying = false
+                            self.audioPlayer.pause()
                             self.player.pause()
-                            self.player.seek(to: .zero)
+                            self.player.seek(to: CMTime(seconds: .zero + 2, preferredTimescale: 1))
                         }
                     })
                     
@@ -69,17 +98,19 @@ struct ExercisingSessionView: View {
                     Button(action: {
                         if timerManager.timerMode != .finished {
                             if self.timerManager.timerMode == .initial {
-                                self.timerManager.setTimerLength(seconds: 20) // Initializing SecondsLeft !!!!!!!!!!!!
+                                self.timerManager.setTimerLength(seconds: 20)
                             }
                             self.timerManager.timerMode == .running ? self.timerManager.pause() : self.timerManager.start()
                         }
                         
                         if self.isplaying {
+                            self.audioPlayer.pause()
                             self.player.pause()
-                            player.isMuted = true
+                            self.player.isMuted = true
                             self.isplaying = false
                         }
                         else {
+                            self.audioPlayer.play()
                             self.player.play()
                             player.isMuted = true
                             self.isplaying = true
@@ -96,9 +127,10 @@ struct ExercisingSessionView: View {
                     // RESTART BUTTON
                     Button(action: {
                         self.timerManager.reset()
-                        self.player.pause()
                         self.isplaying = false
-                        self.player.seek(to: .zero)
+                        self.audioPlayer.pause()
+                        self.player.pause()
+                        self.player.seek(to: CMTime(seconds: .zero + 2, preferredTimescale: 1))
                     }, label: {
                         HStack(spacing: 15) {
                             Image(systemName: "arrow.clockwise")
