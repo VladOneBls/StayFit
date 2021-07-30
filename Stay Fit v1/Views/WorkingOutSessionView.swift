@@ -13,6 +13,7 @@ struct WorkingOutSessionView: View {
     let exercisesNames: [String]
     let videoNames: [String]
     
+    @State private var audioPlayer: AVAudioPlayer
     @State private var customPlayer : AVPlayer
     @State private var currentItem = 0
     @State private var isplaying = false
@@ -23,21 +24,48 @@ struct WorkingOutSessionView: View {
         self.exercisesNames = exercisesNames
         self.videoNames = videoNames
         self._customPlayer = State(initialValue: AVPlayer(url: URL(fileURLWithPath: Bundle.main.path(forResource: videoNames[0], ofType: "mov")!)))
+        self._audioPlayer = State(initialValue: try! AVAudioPlayer(contentsOf: URL(fileURLWithPath: Bundle.main.path(forResource: "audio", ofType: "mp3")!)))
     }
     
     var body: some View {
         VStack {
-            CustomVP(player: customPlayer)
-                .frame(width: 390, height: 219)
-                .onTapGesture {
-                    self.showcontrols = true
-                }
-                .onAppear(perform: {
-                    self.customPlayer.seek(to: CMTime(seconds: .zero + 2, preferredTimescale: 1)) // !!!
+            ZStack {
+                CustomVP(player: customPlayer)
+                    .frame(width: 390, height: 219)
+                    .onTapGesture {
+                        self.showcontrols = true
+                    }
+                    .onAppear(perform: {
+                        self.customPlayer.seek(to: CMTime(seconds: .zero + 2, preferredTimescale: 1))
+                    })
+                    .onChange(of: customPlayer, perform: { value in
+                        self.customPlayer.seek(to: CMTime(seconds: .zero + 2, preferredTimescale: 1))
+                        if isplaying == false {
+                            self.customPlayer.pause()
+                        }
+                    })
+                    .navigationBarHidden(true)
+                
+                // NAVIGATION BAR BACK BUTTON
+                Button(action: {
+                    self.audioPlayer.pause()
+                    self.audioPlayer.currentTime = 0
+                    self.customPlayer.pause()
+                    self.timerManager.countdownFinished = false
+                    self.timerManager.reset()
+                    self.presentationMode.wrappedValue.dismiss()
+                }, label: {
+                    HStack (spacing: 4) {
+                        Image(systemName: "chevron.backward")
+                            .font(.title2)
+                        Text("Back")
+                    }.foregroundColor(.black)
+                    .padding(.leading, 8)
+                    .padding(.bottom, 151)
+                    Spacer()
                 })
-                .onChange(of: customPlayer, perform: { value in
-                    self.customPlayer.seek(to: CMTime(seconds: .zero + 2, preferredTimescale: 1))
-                })
+            }
+            
             
             GeometryReader {_ in
                 VStack {
@@ -71,14 +99,23 @@ struct WorkingOutSessionView: View {
                         timerManager.setTimerLength(seconds: exerciseTime)
                     })
                     
+                    // 3 BUTTONS
                     HStack {
                         
                         // BACK BUTTON
                         Button(action: {
-                            if currentItem != 0 {
-                                currentItem = min(currentItem, currentItem - 1)
-                                self.timerManager.reset()
-                                self.timerManager.start()
+                            if isplaying == true {
+                                if currentItem != 0 {
+                                    currentItem = min(currentItem, currentItem - 1)
+                                    self.timerManager.reset()
+                                    self.timerManager.start()
+                                }
+                            }
+                            else {
+                                if currentItem != 0 {
+                                    currentItem = min(currentItem, currentItem - 1)
+                                    self.timerManager.reset()
+                                }
                             }
                         }, label: {
                             Image(systemName: "lessthan")
@@ -99,11 +136,13 @@ struct WorkingOutSessionView: View {
                             }
                             
                             if self.isplaying {
+                                self.audioPlayer.pause() // !!!
                                 self.customPlayer.pause()
                                 self.customPlayer.isMuted = true
                                 self.isplaying = false
                             }
                             else {
+                                self.audioPlayer.play() // !!!
                                 self.customPlayer.play()
                                 customPlayer.isMuted = true
                                 self.isplaying = true
@@ -126,8 +165,9 @@ struct WorkingOutSessionView: View {
                             }
                             // if workout is finished => restart counter + stop video + dismiss view
                             if timerManager.countdownFinished && currentItem == videoNames.count-1 {
+                                self.audioPlayer.pause()
+                                self.audioPlayer.currentTime = 0
                                 self.customPlayer.pause()
-                                self.isplaying = false
                                 self.timerManager.countdownFinished = false
                                 self.timerManager.reset()
                                 self.presentationMode.wrappedValue.dismiss()
@@ -136,10 +176,18 @@ struct WorkingOutSessionView: View {
                         
                         // FORWARD BUTTON
                         Button(action: {
-                            if currentItem < videoNames.count-1 {
-                                currentItem = min(videoNames.count - 1, currentItem + 1)
-                                self.timerManager.reset()
-                                self.timerManager.start()
+                            if isplaying == true {
+                                if currentItem < videoNames.count-1 {
+                                    currentItem = min(videoNames.count - 1, currentItem + 1)
+                                    self.timerManager.reset()
+                                    self.timerManager.start()
+                                }
+                            }
+                            else {
+                                if currentItem < videoNames.count-1 {
+                                    currentItem = min(videoNames.count - 1, currentItem + 1)
+                                    self.timerManager.reset()
+                                }
                             }
                         }, label: {
                             Image(systemName: "greaterthan")
@@ -155,6 +203,7 @@ struct WorkingOutSessionView: View {
                     Button(action: {
                         self.timerManager.reset()
                         self.isplaying = false
+                        self.audioPlayer.pause()
                         self.customPlayer.pause()
                         self.customPlayer.seek(to: CMTime(seconds: .zero + 2, preferredTimescale: 1))
                     }, label: {
@@ -208,5 +257,4 @@ struct WorkingOutSessionView: View {
             uiViewController.player = player
         }
     }
-    
 }
