@@ -158,7 +158,7 @@ struct CustomVideoPlayer : UIViewControllerRepresentable {
     @Binding var player: AVPlayer
     
     func makeUIViewController(context: UIViewControllerRepresentableContext<CustomVideoPlayer>) -> AVPlayerViewController {
-          
+        
         let controller = AVPlayerViewController()
         controller.player = player
         controller.showsPlaybackControls = false
